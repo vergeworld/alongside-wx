@@ -1,0 +1,135 @@
+.input-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #f5f4f4;
+  min-height: 100rpx;
+  z-index: 1000;
+  background-color: white;
+}
+
+.input-box .send-msg-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.input-box .send-more-box {
+  margin: 20rpx 35rpx 35rpx 35rpx;
+}
+
+.input-box .input-item {
+  margin: 0 5rpx;
+  flex: 1;
+  width: 0%;
+  position: relative;
+}
+
+.input-box .input-item .comment-icon {
+  position: absolute;
+  left: 5rpx;
+  top: 6rpx;
+}
+
+.input-box .input-item .input {
+  border: 1px solid gray;
+  background-color: #fff;
+  border-radius: 20px;
+  line-height: 60rpx;
+  margin: 5rpx 0 5rpx 10rpx;
+  font-size: 28rpx;
+  padding: 0 10px;
+}
+
+.input-box .input-item .keyboard-input {
+  width: auto;
+  max-height: 500rpx;
+  height: 58rpx;
+  word-break: break-all;
+  overflow: auto;
+}
+
+
+.input-box .add-icon {
+  margin-left: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  transform: scale(0.9);
+  margin-top: 2px;
+}
+
+.input-box .submit-btn {
+  font-size: 26rpx;
+  font-weight: bold;
+  margin: 0 20rpx 0 10rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  background-color: #02f598;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+button::after {
+  border: none;
+}
+
+.hidden {
+  display: flex;
+  padding: 0 0 20rpx 15rpx;
+}
+
+.more {
+  width: 134rpx;
+  height: 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rpx;
+  border-radius: 2px;
+  background-color: #D5D5D5;
+}
+
+
+.more image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+.file-box {
+  width: 134rpx;
+  height: 130rpx;
+  position: relative;
+  margin-left: 10rpx;
+}
+
+.deleting {
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.file-box image {
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.remove-icon {
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}

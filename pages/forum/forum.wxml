@@ -1,0 +1,30 @@
+<!-- 学校内容区 -->
+<view class="oBox">
+	<image class="titleImg" mode="aspectFill" src="{{wall}}"></image>
+</view>
+<view class="aBox">
+	<image src="{{badge}}"></image>
+	<view>
+		<text>桂林理工大学·空港校区</text>
+		<text style="font-size:13px;" selectable>厚德笃学，惟实励新 </text>
+		<text style="font-size:13px;" selectable>广西·扶绥县</text>
+	</view>
+</view>
+
+<view class="share" bindtap="share">
+	<image src="/images/icon/8.8.png"></image>
+</view>
+
+<import src="../../html/forum.wxml" />
+<view wx:if="{{postList[1]}}" >
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+	<template is="forum" data="{{item,index,imgW,imgH,imgM}}" />
+</block>
+</view>
+
+<!-- 顶部隐藏条 -->
+<view wx:if="{{isfixed}}" class="div">
+	<view>
+		<text>校园动态</text>
+	</view>
+</view>

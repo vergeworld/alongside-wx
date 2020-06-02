@@ -1,0 +1,109 @@
+page {
+  background-color: #f5f4f4;
+}
+
+/* 平台声明 */
+@keyframes remindMessage {
+  0% {
+    -webkit-transform: translateX(90%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-180%);
+  }
+}
+
+.notice {
+  width: 510rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 200rpx;
+}
+
+.notice image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
+
+.notice view {
+  width: 90%;
+  margin-right: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.notice text {
+  display: block;
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  animation: remindMessage 14s linear infinite;
+}
+
+.topBox {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #0af4e2;
+}
+
+.img-1 {
+  width: 80px;
+  height: 80px;
+}
+
+.img-2 {
+  width: 540rpx;
+  height: 100rpx;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.door-text {
+  margin-left: 30px;
+}
+
+input {
+  margin-left: 10px;
+  width: 70%;
+}
+
+.box {
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.radio-group {
+  background-color: white;
+}
+
+.radio {
+  margin-left: 10px;
+}
+
+.butm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 500rpx;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #0af4e2;
+  color: white;
+  font-weight: bold;
+
+}

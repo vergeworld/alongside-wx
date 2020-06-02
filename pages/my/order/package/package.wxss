@@ -1,0 +1,92 @@
+page{
+  border-top: 1px solid #f5f4f4;
+}
+
+.orderbox {
+  font-size: 28rpx;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.msgbox {
+  width: 620rpx;
+  height: 260rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.dletbox {
+  width: 170rpx;
+  height: 260rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dletbox image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.status{
+  font-size: 28rpx;
+  color: red;
+  font-weight: bold;
+}
+
+.cancel{
+  color: white;
+  font-size: 26rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background-color:aquamarine;
+}
+
+/* 没有其他内容 */
+.else_box {
+  width: 99%;
+  height: 100%;
+  color: #a4a4a4;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #f5f4f4;
+}
+
+.else_box image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 加载显示 */
+.loading {
+  width: 100%;
+  height: 100%;
+  color: #a4a4a4;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #f5f4f4;
+}
+
+.loading image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.loading view {
+  margin-top: -65rpx;
+}

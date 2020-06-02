@@ -1,0 +1,8 @@
+<view class="section">
+	<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+		<view class="picker">
+			<text>当前选择 {{array[index]}}</text>
+			<image class="icon" src="/images/icon/3.3.png"></image>
+		</view>
+	</picker>
+</view>

@@ -1,0 +1,10 @@
+<view class="line"></view>
+<image class="a" src="/images/post/24.png"></image>
+<view style="padding:10rpx">小件<text style="color:red">(2元)</text>：鞋盒左右大小</view>
+<image class="b" src="/images/post/25.png"></image>
+<view style="padding:10rpx">大件<text style="color:red">(3.5元)</text>：矿泉水纸箱左右大小</view>
+<image class="c" src="/images/post/26.png"></image>
+
+<view style="margin-top: 150rpx;padding:20rpx;font-weight:bold">
+<text style="color:red">注：本平台采用货到付款方式，对于超大件的物品(自行车、晾衣架、洗衣机、书桌、书架...), 贵重物品（手机、电脑、笔记本...）等物品，本平台暂不提供代领。具体价格以实物为主，若有不解，请联系客服。最后，希望你学习愉快。</text>
+</view>

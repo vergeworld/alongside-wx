@@ -1,0 +1,24 @@
+<view class="locationBox1">
+
+	<view class="titleBox" style="height:70rpx; align-items: flex-end;">
+		<text style="margin-left: 40rpx;  font-weight: bold;">出行地址</text>
+		<view>
+				<text class="price" >
+		费用：<text style=" font-size: 45rpx;">0.00</text>元
+		</text>
+		<image style="width:15rpx;height:25rpx;margin:0 50rpx 8rpx 15rpx;" src="/images/icon/3.3.png"></image>
+		</view>
+	</view>
+
+	<view style="height:1px;width:88%;margin-left:40rpx;background:#f5f4f4;"></view>
+	<view>
+		<image src="/images/icon/5.7.png"></image>
+		<input placeholder="在哪出发"></input>
+	</view>
+	<view style="height:1px;width:88%;margin-left:40rpx;background:#f5f4f4;"></view>
+	<view>
+		<image src="/images/icon/5.8.png"></image>
+		<input placeholder="你要去哪"></input>
+	</view>
+	<view style="height:1px;width:88%;margin-left:40rpx;background:#f5f4f4;"></view>
+</view>

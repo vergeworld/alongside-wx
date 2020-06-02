@@ -1,0 +1,31 @@
+  <view>
+  	<swiper class="top-swiper" interval="8000" autoplay circular>
+  		<block wx:for="{{imgsPath}}" wx:key="st">
+  			<swiper-item>
+  				<image mode="aspectFill" class="swiperImg" src="{{item}}" />
+  			</swiper-item>
+  		</block>
+  	</swiper>
+  </view>
+
+
+  <block wx:for="{{postList}}" wx:for-item="item" wx:key="st">
+  	<view class="bottom-box" bindtap="detail" data-id="{{item._id}}">
+  		<image mode="aspectFill" class="imgs" src="{{item.img}}"></image>
+  		<view class="text-box">
+  			<view class="text-box1">
+  				<text class="title">{{item.drive}}</text>
+  				<text class="rmb">{{item.price}}</text>
+  			</view>
+  			<text class="address">{{item.address}}</text>
+  			<view class="mark">
+  				<view>{{item.grade}}分</view>
+  				<text> {{item.sign}}人报名</text>
+  			</view>
+  			<view class="remark">
+  				<text>{{item.recommend}}人推荐</text>
+  				<text>{{item.comment}}人评论</text>
+  			</view>
+  		</view>
+  	</view>
+  </block>

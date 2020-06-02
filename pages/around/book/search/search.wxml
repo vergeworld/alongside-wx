@@ -1,0 +1,43 @@
+<view class="ipt-box">
+	<view class="ipt">
+		<icon type="search" size="16"></icon>
+		<input confirm-type="search" bindconfirm='confirmTap' value="{{inputVal}}" bindinput="input" placeholder="输入书籍名称..."></input>
+		<!--输入款字数大于0，则显示清除按钮 -->
+		<view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+			<icon type="clear" size="14"></icon>
+		</view>
+	</view>
+</view>
+
+<view style="height:100rpx"></view>
+
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+	<view class="top-box" bindtap="detail" data-id="{{item._id}}">
+		<view class="name-box">
+			<view>
+				<image class="name-img" mode="aspectFill" src="{{item.url}}" />
+				<view class="name">
+					<text>{{item.name}}</text>
+					<text class="time">{{item.time}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="bottom-box">
+			<image class="text-img" mode="aspectFill" src="{{item.img}}"></image>
+			<view class="text-box">
+				<text class="book">书籍名称：{{item.book}}</text>
+				<text class="reason">推荐理由：{{item.reason}}</text>
+				<text class="author">书籍作者：{{item.author}}</text>
+				<view class="number">
+					<text>{{item.read}}人查看</text>
+					<text>{{item.comment}}人评论</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>
+
+<view wx:if="{{show}}" class="blank-box">
+	<image src="/images/post/9.png"></image>
+	<text>暂无搜索结果~~</text>
+</view>

@@ -1,0 +1,44 @@
+<view class="cir_box">
+	<view class="circle"></view>
+</view>
+
+<!-- 顶部轮播图  -->
+<view>
+	<swiper class="top-swiper" indicator-dots="true" autoplay="true" interval="5000" circular="true">
+		<block wx:for="{{imgsPath}}" wx:key="st">
+			<swiper-item>
+				<image mode="aspectFill" src="{{item}}" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view class="ipt">
+	<view class="input_box" bindtap="search">
+		<icon type="search" size="16"></icon>
+		<input disabled="true" placeholder="{{placeholder}}"></input>
+	</view>
+	<image wx:if="{{img}}" mode="aspectFill"  src="{{img}}" class="my" bindtap="publish"></image>
+	<image wx:else class="my" src="/images/icon/6.5.png"></image>
+</view>
+
+<!-- 商品展示 -->
+<import src="../../../html/market.wxml"></import>
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+<template is='list' data="{{item,postLsit,index}}"></template>
+</block>
+
+<view class="bottom" wx:if="{{isfixed && show}}">
+	——已经到底了，没有更多啦——
+</view>
+
+<view wx:if="{{loading}}" class="loading">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>
+
+
+<view class="no_order" style="height:{{screen_height}}px" wx:if="{{not_order}}">
+	<image style="width:120rpx;height:120rpx;" src="/images/icon/4.7.png"></image>
+	<view style="margin:0">亲！您还没有人上传商品哦~</view>
+</view>

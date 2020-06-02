@@ -1,0 +1,31 @@
+	<view class="orderbox" wx:for="{{postList}}" wx:key='st'>
+		<view class="imgBox" bindtap="service">
+			<image src="/images/icon/3.7.png"></image>
+			<view>
+			<text style=" font-size: 28rpx;">youbo 快递超市</text>
+			<text style=" font-size: 26rpx;color:gray;margin-top:10px">全程呵护，放心托付。</text>
+			</view>
+			<image style="width:20rpx;height:30rpx;margin-left:120rpx" src="/images/icon/3.3.png"></image>
+		</view>
+		<view class="msgbox">
+			<view>
+				<view>
+					<text>{{item.name}}</text>
+					<text style="margin-left:20rpx">{{item.phone}}</text>
+				</view>
+				<text style="color:red" wx:if="{{item.status == '等待配送'}}">{{item.status}}</text>
+			</view>
+			<text>地址：{{item.address}}</text>
+			<text>快递：{{item.express}}</text>
+			<text>编号：{{item.number}}</text>
+			<text wx:if="{{item.type}}">类型：{{item.type}}</text>
+			<text wx:if="{{item.price}}">费用：￥{{item.price}}</text>
+			<text wx:if="{{item.remarks}}">备注：{{item.remarks}}</text>
+			<text>时间：{{item.time}}</text>
+		</view>
+		<view class="dletbox" wx:if="{{item.status}}">{{item.status}}</view>
+	</view>
+
+<view class="butm" style="height:{{screen_height}}px">
+	<button bindtap="pay" wx:if="{{postList[0].price}}">支付订单</button>
+</view>

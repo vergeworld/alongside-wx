@@ -1,0 +1,52 @@
+<view wx:if="{{postList}}">
+	<!-- 主体内容区 -->
+	<view class="post-container">
+		<view class="author">
+			<view style="display:flex;align-items: center;">
+				<image class="headimg" mode="aspectFill" src="{{postList.url}}" />
+				<view class="nickname">
+					<text class="post-title" selectable >{{postList.name}}</text>
+					<text class="post-date">{{postList.time}}</text>
+				</view>
+			</view>
+		</view>
+		<text class="post-content" selectable wx:if="{{postList.text}}">#{{postList.text}}</text>
+		<view class="img-box">
+			<block wx:for="{{postList.img}}" wx:key="st">
+				<image class="post-image" id="{{index}}" mode="{{mode}}" style="width:{{imgWidth}}rpx;height:{{imgHeight}}rpx" src="{{item}}" />
+			</block>
+		</view>
+		<view class="post-like">
+			<text>{{postList.read}}人阅读</text>
+		</view>
+	</view>
+
+		<import src="../../../html/comment.wxml" />
+	<!-- 评论内容 -->
+	<view wx:if="{{commentList[0]}}">
+		<block wx:for="{{commentList}}" wx:key="index">
+			<template is="comment" data="{{...item,index}}" />
+		</block>
+
+		<!-- 底部提示按钮 -->
+		<view class="bottom">
+			—没有更多啦—
+		</view>
+	</view>
+	<view wx:else class="else_box">
+		<image src="/images/post/9.png"></image>
+		<text>还没有评论，点击评论吧~</text>
+	</view>
+
+	<form catchsubmit="formSubmit">
+		<template is="input_box" data="{{value,sendMoreMsgFlag,ons,deleteIndex}}"></template>
+	</form>
+</view>
+
+<view wx:else class="loading">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>
+
+<!-- 画布 -->
+<canvas style="width: {{cw}}px; height: {{ch}}px;" canvas-id='firstCanvas' class='Canvas'></canvas>

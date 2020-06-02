@@ -1,0 +1,44 @@
+page {
+  background: #fafafa;
+}
+
+.locationBox1 {
+  width: 94%;
+  height: 310rpx;
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20rpx;
+}
+
+.locationBox1 view {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.locationBox1 view image {
+  height: 40rpx;
+  width: 40rpx;
+  margin: 0 10px 0 20px;
+}
+
+.titleBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBox view{
+  display: flex;
+  align-items: flex-end;
+}
+
+.titleBox text {
+  font-size: 12px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}

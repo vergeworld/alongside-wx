@@ -1,0 +1,114 @@
+page {
+  background-color: #f5f4f4;
+}
+
+/* 搜索框 */
+.ipt {
+  width: 100%;
+  padding: 20rpx 0 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fac402;
+}
+
+.input_box {
+  width: 595rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx 0 20rpx;
+  border-radius: 50px;
+  background-color: white;
+  margin-left: 20rpx;
+}
+
+input {
+  width: 100%;
+  margin-left: 10rpx;
+}
+
+.my {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.cir_box {
+  height: 145px;
+  background: #fac402;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.circle {
+  width: 2750rpx;
+  height: 2750rpx;
+  border-radius: 50%;
+  margin-left: -1000rpx;
+  margin-top: 75px;
+  background-color: #f5f4f4;
+}
+
+/* 顶部轮播图 */
+.top-swiper {
+  height: 280rpx;
+  padding: 20rpx;
+  margin-top: 40px;
+}
+
+.top-swiper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@import '../../../css/market.wxss';
+
+.more{
+display: none;
+}
+
+/* 加载显示 */
+.loading {
+  width: 100%;
+  height: 99%;
+  color: #a4a4a4;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #f5f4f4;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loading image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.loading view {
+  margin-top: -65rpx;
+}
+
+.no_order {
+  color: #a4a4a4;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #f5f4f4;
+  background-color: white;
+}

@@ -1,0 +1,74 @@
+/* 招聘内容 */
+.gray {
+  border-top: 1px solid #e9e8e8;
+  border-bottom: 5px solid #e9e8e8;
+}
+
+.a {
+  width: 100%;
+  height: 120rpx;
+  /* padding: 20rpx; */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.headimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+}
+
+.shopname-box {
+  height: 120rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.shopname {
+  font-weight: bold;
+}
+
+.date-text {
+  font-size: 26rpx;
+}
+
+.publish {
+  padding: 20rpx;
+}
+
+.join {
+  padding: 20rpx;
+}
+
+.join image {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 5px;
+}
+
+/* 加载显示 */
+.loading {
+  width: 100%;
+  height: 90%;
+  color: #a4a4a4;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #f5f4f4;
+  background-color: white;
+}
+
+.loading image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.loading view {
+  margin-top: -65rpx;
+}

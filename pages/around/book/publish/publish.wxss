@@ -1,0 +1,155 @@
+page {
+  background-color: #f5f4f4;
+}
+
+.submit {
+  background-color: white;
+}
+
+/* 个人头像区 */
+.box {
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f5f4f4;
+}
+
+.user_box {
+  display: flex;
+  align-items: center;
+}
+
+.userinfo-img {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 100%;
+}
+
+.userinfo-nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+/* 分享按钮 */
+button {
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #3f0;
+}
+
+/* 输入框 */
+.meg-box {
+  height: 70rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.meg {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+input {
+  width: 70%;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+/* 文字输入区 */
+.depict-box {
+  height: 70px;
+  font-size: 30rpx;
+  display: flex;
+  padding: 10px 20rpx 0 20rpx;
+}
+
+.txt_depict {
+  width: 76%;
+  padding-left: 20rpx;
+}
+
+.txt_depict textarea {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rpx;
+}
+
+
+/* 图片选择区 */
+.send-more-result-main {
+  padding: 20rpx 0 80rpx 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.file-box {
+  height: 230rpx;
+  width: 230rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.imgs-box {
+  height: 230rpx;
+  width: 230rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4f4;
+}
+
+.deleting {
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.send-more-result-main image {
+  height: 100%;
+  width: 100%;
+}
+
+.remove-icon {
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}
+
+.img-box {
+  height: 100%;
+  width: 100%;
+
+}
+
+.Canvas {
+  position: absolute;
+  left: -100000px;
+  bottom: -111111px;
+  height: 1000px;
+  width: 1000px;
+}

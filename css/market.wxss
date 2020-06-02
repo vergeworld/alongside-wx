@@ -1,0 +1,98 @@
+/* 商品展示 */
+.top-box {
+  margin: 0 20rpx 20rpx 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-bottom: 20rpx;
+}
+
+.name-box {
+  width: 95%;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5f4f4;
+  margin-bottom: 20rpx;
+}
+
+.name-box view{
+  display: flex;
+  align-items: center;
+}
+
+.name-img {
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 20rpx 0;
+  border-radius: 50%;
+}
+
+.more{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.bottom-box {
+  display: flex;
+}
+
+.text-img {
+  width: 250rpx;
+  height: 240rpx;
+  margin-left: 20rpx;
+  border-radius: 5px;
+
+}
+
+.text-box {
+  width: 60%;
+  height: 240rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text1-box {
+  height: 45rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-1 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.text-2 {
+  color: red;
+  margin-right: 20rpx;
+}
+
+.text-3 {
+  font-size: 26rpx;
+  width: 96%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.bottom {
+  width: 100%;
+  color: gray;
+  font-size: 28rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  bottom: 0;
+}

@@ -1,0 +1,29 @@
+	<import src="../../../html/forum.wxml" />
+	<!-- 个人主页 -->
+	<template is="my" data="{{postList,not_share,img,name,label,share,praise,comment,read}}" />
+
+
+	<!-- 顶部返回按钮 -->
+	<view class="back" bindtap="back">
+		<image src="/images/icon/5.png"></image>
+	</view>
+
+	<view wx:if="{{postList[0]}}">
+		<!-- 帖子内容区 -->
+		<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+			<template is="forum" data="{{item,index,imgW,imgH,imgM}}" />
+		</block>
+	</view>
+
+	<view wx:else class="loading">
+		<image src="{{loadImg}}"></image>
+		<view>{{loadTxt}}</view>
+	</view>
+
+	<!-- 顶部隐藏条 -->
+	<template is="isF" data="{{isfixed}}"></template>
+
+	<!-- 底部隐藏条 -->
+	<view class="bottom" wx:if="{{no_more}}">
+		——已经到底了，没有更多啦——
+	</view>

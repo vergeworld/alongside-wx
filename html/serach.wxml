@@ -1,0 +1,9 @@
+<template name="search">
+	<view class="ipt">
+		<view class="input_box" bindtap="search">
+			<icon type="search" size="16"></icon>
+			<input disabled="true" placeholder="{{placeholder}}"></input>
+		</view>
+		<view class="publish" bindtap="publish">发表</view>
+	</view>
+</template>

@@ -1,0 +1,41 @@
+<view class="person">
+	<view class="publish tx" bindtap="chooseImage">
+		<text>头像</text>
+		<view>
+			<image class="tx-img" src="{{img}}" mode="aspectFill" catchtap="preview"></image>
+			<image class="icon" src="/images/icon/3.3.png"></image>
+		</view>
+	</view>
+	<view class="publish" bindtap="name">
+		<view>
+			<text>昵称</text>
+			<text class="txt">{{name}}</text>
+		</view>
+		<image class="icon" src="/images/icon/3.3.png"></image>
+	</view>
+	<view class="publish" bindtap="gender">
+		<view>
+			<text>性别</text>
+			<text class="txt">{{gender}}</text>
+		</view>
+		<image class="icon" src="/images/icon/3.3.png"></image>
+	</view>
+	<view class="publish" bindtap="school">
+		<view>
+			<text>学校</text>
+			<text class="txt">{{school}}</text>
+		</view>
+		<image class="icon" src="/images/icon/3.3.png"></image>
+	</view>
+</view>
+
+<view class="label" bindtap="label">
+	<view>
+		<text>标签</text>
+		<text wx:if="{{label}}" class="txt">{{label}}</text>
+			<text wx:else class="txt">好的签名让人更容易心动。</text>
+	</view>
+	<image class="icon" src="/images/icon/3.3.png"></image>
+</view>
+
+<button bindtap="remove">退出登陆</button>

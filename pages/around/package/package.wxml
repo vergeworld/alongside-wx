@@ -1,0 +1,51 @@
+	<view class="notice" wx:if="{{notice}}">
+		<image src="/images/icon/ic_notice.png"></image>
+		<view>
+			<text> {{notice}}</text>
+		</view>
+	</view>
+
+	<view class="topBox">
+		<image class="image1" src="/images/post/6.png"></image>
+		<image class="image2" src="/images/post/8.png"></image>
+	</view>
+	<form bindsubmit="formSubmit">
+		<view class="formSumit">
+			<view class="meg-box">
+				<text class="meg">收 件 人</text>
+				<input style="margin-left:35rpx" value='{{receiver}}' name="input0" placeholder="请输入您的名字"></input>
+			</view>
+			<view class="meg-box">
+				<text class="meg">联系电话</text>
+				<input type="number" maxlength="11" name="input1" value='{{phone}}' placeholder="请输入您的电话"></input>
+			</view>
+			<view class="meg-box">
+				<text class="meg">配送地址</text>
+				<input name="input2" value='{{site}}' placeholder="例：2#A222"></input>
+			</view>
+			<view class="meg-box">
+				<text class="meg">取件快递</text>
+				<input name="input3" value="{{value}}" placeholder="请输入快递名称"></input>
+			</view>
+			<view class="meg-box">
+				<text class="meg">取件编号</text>
+				<input type="number" name="input4" value="{{value}}" placeholder="请输入取件编号"></input>
+			</view>
+			<view class="meg-box">
+				<text class="meg">其他备注</text>
+				<input name="input5" value="{{value}}" placeholder="收件人与签收人不同需备注"></input>
+			</view>
+			<view bindtap="format" style="margin-top:10px">
+				<text style="color:red">《快递计费细则》</text>
+			</view>
+		</view>
+
+		<view class="butm" style="height:{{screen_height}}px">
+			<button formType="submit">提交订单</button>
+		</view>
+
+	</form>
+
+	<view bindtap="service" class="service">
+		<text>客服中心 | 订单查询</text>
+	</view>

@@ -1,0 +1,60 @@
+<view wx:if="{{postList[0]}}">
+	<view class="top-box" wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+		<view bindtap="people" class="name-box">
+			<view>
+				<image class="name-img" src="/images/icon/4.6.png" />
+				<text>零食铺子</text>
+			</view>
+			<image class="more" data-id="{{item._id}}" data-index="{{index}}" bindtap="more" src="/images/icon/3.4.png"></image>
+		</view>
+		<view class="bottom-box">
+			<image class="text-img" mode="aspectFill" src="{{item.img}}"></image>
+			<view class="text-box">
+				<text class="txt-name">{{item.name}}</text>
+				<text class="txt-taste">口味：{{item.taste}}</text>
+				<text class="txt-price">￥{{item.price}}</text>
+				<view class="number">
+					<text>数量</text>
+					<view class="num-img">
+						<image bindtap="cut" data-id="{{item._id}}" data-index="{{index}}" src="/images/icon/6.1.png"></image>
+						{{item.number}}
+						<image bindtap="add" data-id="{{item._id}}" data-index="{{index}}" src="/images/icon/6.0.png"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 底部空格 -->
+	<view style="height:100rpx"></view>
+	<view class="addup">
+		<view class="site" bindtap="site">
+			<image src="/images/icon/5.5.png"></image>
+			<text>收货地址</text>
+		</view>
+		<view>
+			<view class="cost">
+				<text class="fee">总计:<text style="color:red">￥{{zong}}</text></text>
+				<text class="tip">配送费用<text style="color:red">￥{{tip}}</text></text>
+			</view>
+			<view class="butn">
+				<button bindtap="submit">确定下单<text style="font-size:20rpx">({{number}}件)</text></button>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="elsebox" wx:if="{{not_order}}">
+	<image src="/images/post/9.png"></image>
+	<text>哈哈~~你还没有订单哦！</text>
+</view>
+
+<view class="elsebox" wx:if="{{not_log}}">
+	<image src="/images/icon/4.6.png"></image>
+	<text>哈哈~~你还没有登陆哦！</text>
+</view>
+
+<view class="elsebox" wx:if="{{not_net}}">
+	<image src="/images/post/3.4.png"></image>
+	<text>网络似乎出现了问题~</text>
+</view>

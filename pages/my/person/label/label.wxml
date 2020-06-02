@@ -1,0 +1,9 @@
+<view class="label">
+	<image src="/images/post/1.jpg"></image>
+	<textarea maxlength="16" bindinput="input" value="{{label}}" placeholder="好的签名让人更容易心动。"></textarea>
+	<text>(可输入16个字)</text>
+</view>
+
+<view class="butm" style="height:{{screen_height}}px">
+<button bindtap="save">保 存</button>
+</view>

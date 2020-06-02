@@ -1,0 +1,43 @@
+<!-- 快递订单列表 -->
+<block wx:for="{{postList}}" wx:key="index">
+	<view class="orderbox" >
+		<view class="msgbox">
+			<view style="font-weight:bold">
+				<text>{{item.name}}</text>
+				<text style="margin-left:20rpx">{{item.phone}}</text>
+			</view>
+			<text>地址：{{item.address}}</text>
+			<text>快递：{{item.express}}</text>
+			<text>编号：{{item.number}}</text>
+			<text wx:if="{{item.price}}">费用：￥{{item.price}}</text>
+			<text style="font-size:22rpx;">{{item.time}}</text>
+		</view>
+		<view class="dletbox" wx:if="{{item.status}}">
+			<view class="status"  bindtap="detail" data-id="{{item._id}}" data-index="{{index}}">{{item.status}}</view>
+			<view catchtap="cancel" class="cancel" wx:if="{{item.status == '等待配送' }}" data-id="{{item._id}}" data-index="{{index}}">取消订单</view>
+			<view catchtap="kd" class="cancel" wx:if="{{item.status == '等待付款'}}">再来一单</view>
+		</view>
+		<view class="dletbox" wx:else>
+			<image catchtap="more" data-id="{{item._id}}" data-index="{{index}}" src="/images/icon/3.4.png"></image>
+			<view catchtap="kd" class="cancel">再来一单</view>
+		</view>
+	</view>
+</block>
+
+<!-- 底部 -->
+<view wx:if="{{!not_order && !not_log && !not_net}}" style="height:20rpx"></view>
+
+<view wx:if="{{not_order}}" class="else_box">
+	<image src="/images/icon/5.0.png"></image>
+	<text>亲！你还没有订单哦</text>
+</view>
+
+<view wx:if="{{not_log}}" class="else_box">
+	<image src="/images/icon/5.0.png"></image>
+	<text>亲！你还没有登陆哦~</text>
+</view>
+
+<view wx:if="{{not_net}}" class="loading">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>

@@ -1,0 +1,66 @@
+<!-- 用户头像名称 -->
+<view class="container">
+
+	<view class="Not_logged" wx:if="{{not_log}}" bindtap="login">
+			<image class="head_img" src="/images/icon/6.5.png"></image>
+			<text>登录/注册</text>
+	</view>
+
+	<view class="name" wx:else>
+		<view class="txt_img_box" bindtap="person">
+			<view class="txt_img">
+				<image class="userinfo-img" src="{{img}}" mode="aspectFill"></image>
+				<view class="txt_name">
+					<text class="userinfo-nickname" style="font-weight:bold">{{name}}</text>
+					<text style="font-size:28rpx;" wx:if="{{label}}">{{label}}</text>
+					<text style="font-size:28rpx;" wx:else>好的签名让人更容易心动。</text>
+				</view>
+			</view>
+			<image class="addright" style="  margin-right: 20rpx;" src="/images/icon/3.3.png"></image>
+		</view>
+
+	</view>
+
+</view>
+
+
+
+<view style="background: white;">
+	<block wx:for="{{titleList}}" wx:key="st">
+		<view class="public-container" bindtap="{{item.tap}}">
+			<view>
+				<image class="publicImg" src="{{item.icon}}"></image>
+				<text class="public">{{item.title}} </text>
+			</view>
+			<image class="addright" src="/images/icon/3.3.png"></image>
+		</view>
+		<view wx:if="{{index==0}}" class="line"></view>
+		<view wx:if="{{index==1}}" class="line"></view>
+	</block>
+</view>
+<view style="height:10px;background:#f3f4f6"></view>
+
+<view style="background: white;">
+	<block wx:for="{{titleList1}}" wx:key="st">
+		<view class="public-container" bindtap="{{item.tap}}">
+			<view>
+				<image class="publicImg" src="{{item.icon}}"></image>
+				<text class="public">{{item.title}} </text>
+			</view>
+			<image class="addright" src="/images/icon/3.3.png"></image>
+		</view>
+		<view wx:if="{{index==0}}" class="line"></view>
+	</block>
+</view>
+
+<view style="height:10px;background:#f3f4f6"></view>
+
+<view style="background: white;">
+	<view class="public-container" bindtap="service">
+		<view>
+			<image class="publicImg" src="/images/icon/4.2.png"></image>
+			<text class="service"> 客服中心 </text>
+		</view>
+		<image class="addright" src="/images/icon/3.3.png"></image>
+	</view>
+</view>

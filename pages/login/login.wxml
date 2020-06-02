@@ -1,0 +1,15 @@
+<view class="youbo_img">
+<image src="/images/post/14.png"></image>
+</view>
+
+<view class="login_box">
+<view class="name">
+<text>youbo</text>
+<text style="font-size:14px">分享精彩时刻，记录美好生活</text>
+</view>
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登陆</button>
+</view>
+
+<view class="service" bindtap="service">
+<text>youbo | 客服中心</text>
+</view>

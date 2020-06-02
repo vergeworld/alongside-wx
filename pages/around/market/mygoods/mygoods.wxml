@@ -1,0 +1,33 @@
+<!-- 商品展示 -->
+<view wx:if="{{postList[0]}}">
+<view style="height:20rpx"></view>
+<import src="../../../../html/market.wxml"></import>
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+<template is='list' data="{{item,postLsit,index}}"></template>
+</block>
+</view>
+
+<view class="bottom" wx:if="{{isfixed && show}}">
+	——已经到底了，没有更多啦——
+</view>
+
+<navigator url="../upload/upload">
+	<view class="upload">
+		<image src="/images/icon/8.8.png"></image>
+	</view>
+</navigator>
+
+<view class="loading" wx:if="{{loading}}">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>
+
+<view class="loading" wx:if="{{not_log}}">
+	<image style="width:120rpx;height:120rpx;" src="/images/icon/4.7.png"></image>
+	<view style="margin:0">亲！您还没有登录哦~</view>
+</view>
+
+<view class="loading" wx:if="{{not_order}}">
+	<image style="width:120rpx;height:120rpx;" src="/images/icon/4.7.png"></image>
+	<view style="margin:0">亲！您还没有商品哦~</view>
+</view>

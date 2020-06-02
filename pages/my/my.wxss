@@ -1,0 +1,177 @@
+page {
+  background-color: #f3f4f6
+}
+
+/* 用户头像 */
+.container {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  background-color: white;
+  border-bottom: 10px solid #f3f4f6;
+}
+
+/* 授权登录 */
+.Not_logged {
+  width: 100%;
+  height: 120px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Microseft YaHei;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.head_img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 0 40rpx;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+
+}
+
+.txt_img_box{
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txt_img{
+  display: flex;
+  align-items: center;
+}
+
+.txt_name{
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+}
+
+.personal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+}
+
+.userinfo-img {
+  height: 160rpx;
+  width: 160rpx;
+  border-radius: 50%;
+  margin-left: 40rpx;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+}
+
+/* 相机分享按钮 */
+.share {
+  width: 120rpx;
+  position: absolute;
+  top: 65rpx;
+  left: 40rpx;
+}
+
+.share image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.person {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 100px;
+  right: 20rpx;
+  text-align: end;
+}
+
+.person image {
+  width: 20rpx;
+  height: 30rpx;
+}
+
+.B {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 100rpx;
+  color: black;
+  margin-left: 10rpx;
+}
+
+.a-container {
+  width: 100%;
+  height: 50px;
+  text-align: left;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.a {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 50px;
+  color: #000;
+  margin-left: 20rpx;
+}
+
+/* icon图标 */
+.public-container {
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line {
+  width: 95%;
+  height: 1px;
+  background-color: #f5f4f4;
+  margin-left: 40rpx
+}
+
+.public-container view {
+  display: flex;
+  align-items: center;
+}
+
+.publicImg {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 20rpx 0 20rpx;
+}
+
+.public-container1 {
+  height: 30px;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.public-container1 view {
+  display: flex;
+  align-items: center;
+}
+
+.addright {
+  width: 20rpx;
+  height: 30rpx;
+}
+

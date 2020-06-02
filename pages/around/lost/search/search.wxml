@@ -1,0 +1,40 @@
+<view class="ipt-box">
+	<view class="ipt">
+		<icon type="search" size="16"></icon>
+		<input confirm-type="search" bindconfirm='confirmTap' value="{{inputVal}}" bindinput="input" placeholder="输入失物名称、特征..."></input>
+		<!--输入款字数大于0，则显示清除按钮 -->
+		<view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+			<icon type="clear" size="14"></icon>
+		</view>
+	</view>
+</view>
+
+<view style="height:100rpx"></view>
+
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+	<view class="gray">
+		<view class="title" bindtap="author">
+			<image class="titleimg" src="{{item.url}}" />
+			<view bindtap="people" class="shopname-box">
+				<text class="shopname" selectable>{{item.name}}</text>
+				<text class="date-text">{{item.time}}</text>
+			</view>
+		</view>
+		<view class="lostnamebox">
+			<text >联系QQ<text style="margin-left:40rpx" selectable>{{item.qq}}</text></text>
+		</view>
+		<view class="depict">
+			<text selectable>相关描述：{{item.content}}</text>
+		</view>
+		<view class="lostimgbox">
+			<block wx:for="{{item.img}}" wx:for-index="idx" wx:key='st'>
+				<image class="lostimg" id="{{index}}" data-list="{{item}}" data-src="{{item}}" bindtap="preview" mode="{{mode[index]}}" style="width:{{imgWidth[index]}}rpx;height:{{imgHeight[index]}}rpx" src="{{item}}" />
+			</block>
+		</view>
+	</view>
+</block>
+
+<view wx:if="{{show}}" class="blank-box">
+	<image src="/images/post/9.png"></image>
+	<text>暂无搜索结果~~</text>
+</view>

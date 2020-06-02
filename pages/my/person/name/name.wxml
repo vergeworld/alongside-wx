@@ -1,0 +1,8 @@
+<view class="name">
+	<view class="input_box">
+		<input maxlength="16" bindinput="input" auto-focus value="{{name}}" placeholder="我的昵称" />
+	</view>
+	<text class="remark">好的名字让人更容易记住。</text>
+</view>
+
+<button bindtap="save">保 存</button>

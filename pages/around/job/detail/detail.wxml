@@ -1,0 +1,42 @@
+  <view wx:if="{{postList}}">
+  	<view class="gray">
+  		<view class="a">
+  			<image class="headimg" src="{{ postList.img}}" />
+  			<view class="shopname-box">
+  				<text class="shopname" selectable>{{ postList.title}}</text>
+  				<text class="date-text">{{postList.time}}</text>
+  			</view>
+  		</view>
+  		<view class="publish">；/
+  			<text class="job" selectable>招聘职业：{{postList.occupation}}（{{postList.number}}人）</text>
+  		</view>
+  		<view class="publish">
+  			<text selectable>工作描述：{{postList.content}}</text>
+  		</view>
+  		<view class="publish">
+  			<text selectable>工资待遇：{{postList.wages}}</text>
+  		</view>
+  		<view class="publish">
+  			<text selectable>上班时间：{{postList.data}}</text>
+  		</view>
+  		<view class="publish">
+  			<text selectable>联系姓名：{{postList.name}}</text>
+  		</view>
+  		<view class="publish">
+  			<text selectable>联系方式：<text selectable>{{postList.phone}}</text></text>
+	
+  		</view>
+  		<view class="publish">
+  			<text selectable>工作地址：{{postList.address}}</text>
+  		</view>
+  	</view>
+
+  	<view class="join" bindtap="join">
+  		<image src="{{jobImg}}"></image>
+  	</view>
+  </view>
+
+  <view wx:else class="loading">
+  	<image src="{{loadImg}}"></image>
+  	<view>{{loadTxt}}</view>
+  </view>

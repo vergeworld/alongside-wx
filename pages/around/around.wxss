@@ -1,0 +1,184 @@
+/* 顶部幻灯片 */
+.top-swiper {
+  width: 100%;
+  height: 350rpx;
+}
+
+.swiperImg {
+  width: 95%;
+  height: 350rpx;
+  border-radius: 10px;
+  margin-left: 20rpx;
+}
+
+/* 三大按钮 */
+.icon-box {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.publish1 {
+  width: 165rpx;
+  height: 202rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0px 20rpx;
+}
+
+.publish1 view {
+  width: 162rpx;
+  height: 158rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1rpx solid #d8d7d7;
+}
+
+.publish1 view image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.publish1 text {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.aroundBox text {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.headimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+}
+
+/* 底部图片 */
+.ximgbox {
+  height: 20rpx;
+  border-bottom: 15rpx solid #fafafa;
+}
+
+/* 景点内容 */
+.top-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.name-box {
+  width: 95%;
+  height: 120rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.img-name {
+  display: flex;
+  align-items: center;
+}
+
+
+.name-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.name {
+  height: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grade-box {
+  height: 30rpx;
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.grade-box image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+}
+
+.score {
+  color: red;
+  font-size: 22rpx;
+  margin-left: 10rpx;
+}
+
+.grade {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.bottom-box {
+  display: flex;
+  padding: 20rpx;
+}
+
+.text-img {
+  width: 250rpx;
+  height: 240rpx;
+  border-radius: 5px;
+
+}
+
+.text-box {
+  width: 60%;
+  height: 240rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-1 {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.text-2 {
+  color: gray;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+}
+
+.label {
+  display: flex;
+}
+
+.text-3 {
+  color: orange;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.number {
+  color: gray;
+  font-size: 22rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

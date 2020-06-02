@@ -1,0 +1,38 @@
+		<view class="ipt-box">
+			<view class="ipt">
+				<icon type="search" size="16"></icon>
+				<input confirm-type="search" bindconfirm='confirmTap' value="{{inputVal}}" bindinput="input" placeholder="输入商品名称..."></input>
+				<!--输入款字数大于0，则显示清除按钮 -->
+				<view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+					<icon type="clear" size="14"></icon>
+				</view>
+			</view>
+		</view>
+
+		<view style="height:100rpx"></view>
+
+		<!-- 零食列表 -->
+		<view class="content">
+			<block wx:for="{{postList}}" wx:key="index">
+				<view class="text-box">
+					<view class="detail" bindtap="detail" data-id="{{item._id}}">
+						<image mode="aspectFill" class="text-img" src="{{item.img}}" />
+						<text class="txt-tit">{{item.name}}</text>
+					</view>
+					<view class="botm">
+						<view class="botm1">
+							<text class="txt-price" >￥<text style="font-size:26rpx;">{{item.price}}</text></text>
+							<text class="buy">{{item.buy}}人购买</text>
+						</view>
+						<view class="addimg" bindtap="add" data-id="{{item._id}}">
+							<image src="/images/icon/5.3.png"></image>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+
+		<view wx:if="{{show}}" class="blank-box">
+			<image src="/images/post/9.png"></image>
+			<text>小U找不到，换个名称试试呗~~</text>
+		</view>

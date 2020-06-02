@@ -1,0 +1,23 @@
+<template name="list">
+	<view class="top-box" bindtap="detail" data-id="{{item._id}}">
+		<view bindtap="people" class="name-box">
+			<view>
+				<image class="name-img" mode="aspectFill" src="{{item.url}}" />
+				<text>{{item.name}}</text>
+			</view>
+			<image class="more"  catchtap="more" data-id="{{item._id}}" data-index="{{index}}" src="/images/icon/3.4.png"></image>
+		</view>
+		<view class="bottom-box">
+			<image class="text-img" mode="aspectFill" src="{{item.img}}"></image>
+			<view class="text-box">
+				<view class="text1-box">
+					<text class="text-1">{{item.goods_name}}</text>
+					<text class="text-2">￥{{item.price}}</text>
+				</view>
+				<text class="text-3" selectable>{{item.miaos}}</text>
+				<text class="text-3">QQ：<text selectable>{{item.qq}}</text></text>
+			</view>
+		</view>
+	</view>
+
+</template>

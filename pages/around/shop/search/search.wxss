@@ -1,0 +1,153 @@
+page {
+  background-color: #fafafa;
+}
+
+/* 搜索框 */
+.ipt-box {
+  padding: 20rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.ipt {
+  width: 670rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx 0 20rpx;
+  border-radius: 50px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+input {
+  width: 95%;
+  margin-left: 10rpx;
+}
+
+.icon-clear {
+  width: 60rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 零食列表 */
+.content {
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.text-box {
+  width: 346rpx;
+  height: 520rpx;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+
+
+.text-img {
+  width: 346rpx;
+  height: 336rpx;
+}
+
+
+.txt-tit {
+  display: block;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-left: 15rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.botm {
+  padding: 15rpx;
+  height: 90rpx;
+  margin-top: 5rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.botm1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txt-price {
+  color: red;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.buy {
+  color: gray;
+  font-size: 20rpx;
+}
+
+.addimg {
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addimg image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.nodata_text {
+  width: 100%;
+  height: 100%;
+  color: #a4a4a4;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodata_text image {
+  width: 320rpx;
+  height: 320rpx;
+  margin-bottom: 20rpx;
+}
+
+.blank-box {
+  width: 100%;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank-box image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.blank-box text {
+  color: #a4a4a4;
+  font-size: 26rpx;
+  font-weight: bold;
+}

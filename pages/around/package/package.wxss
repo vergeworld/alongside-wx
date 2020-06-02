@@ -1,0 +1,114 @@
+page {
+  background: #f3f4f6;
+}
+
+/* 平台声明 */
+@keyframes remindMessage {
+  0% {
+    -webkit-transform: translateX(90%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-180%);
+  }
+}
+
+.notice {
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 200rpx;
+  right: 0;
+}
+
+.notice image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
+
+.notice view {
+  width: 90%;
+  margin-right: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.notice text {
+  display: block;
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  animation: remindMessage 14s linear infinite;
+}
+
+
+.topBox {
+  padding: 10px;
+  height: 80px;
+  background: #03d35d;
+}
+
+.image1 {
+  width: 80px;
+  height: 80px;
+}
+
+.image2 {
+  width: 520rpx;
+  height: 50px;
+  margin-left: 20rpx;
+  margin-top: 10px;
+}
+
+.formSumit {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+input {
+  margin-left: 20rpx;
+  width: 70%;
+}
+
+.meg-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.meg {
+  margin-left: 20rpx;
+}
+
+.butm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  width: 500rpx;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #03d35d;
+}
+
+/* 服务中心 */
+.service {
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+}

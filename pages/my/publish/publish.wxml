@@ -1,0 +1,53 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<view class="gray">
+		<view class="public">
+			<text>店铺名称</text>
+			<input value="{{value}}" placeholder="请输入店铺名称" name="title"></input>
+		</view>
+
+		<view class="public">
+			<text>工作职业</text>
+			<input name="occupation" value="{{value}}" placeholder="请输入招聘职业"></input>
+
+		</view>
+		<view class="public">
+			<text>招聘人数</text>
+			<input type="number" value="{{value}}" name="number" placeholder="请输入招聘人数"></input>
+		</view>
+		<view class="depict-box">
+			<view>应聘要求</view>
+			<view class="txt_depict">
+				<textarea class="depict" value="{{value}}" name="content" placeholder="请简单描述一下"></textarea>
+			</view>
+		</view>
+
+		<view class="public">
+			<text>上班时间</text>
+			<input value="{{value}}" placeholder="请输入上班时间" name="time"></input>
+		</view>
+		<view class="public">
+			<text>工资待遇</text>
+			<input value="{{value}}" placeholder="请输入工资待遇" name="wages"></input>
+		</view>
+		<view class="public">
+			<text class="name">联系姓名</text>
+			<input value="{{value}}" placeholder="请输入联系姓名" name="name"></input>
+		</view>
+		<view class="public">
+			<text class="code">联系电话</text>
+			<input type="number" value="{{value}}" maxlength="11" placeholder="请输入手机号码" name="phone"></input>
+		</view>
+		<view class="public">
+			<text>工作地址</text>
+			<input value="{{value}}" placeholder="请填写一下地址" name="address"></input>
+		</view>
+		<view bindtap="announce" class="announce">《兼职发布须知 》</view>
+	</view>
+
+
+	<view style="height:{{screen_height}}px" class="but">
+		<button formType="submit">提交发布</button>
+	</view>
+
+
+</form>

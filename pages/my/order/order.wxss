@@ -1,0 +1,164 @@
+.wall {
+  width: 95%;
+  height: 200px;
+  margin-left: 20rpx;
+  border-radius: 5px;
+}
+
+.order_box {
+  color: #f5f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.order_box view {
+  width: 48.6%;
+  height: 80rpx;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 80rpx;
+}
+
+.order_box view image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+/* youmai */
+.title_box {
+  height: 140rpx;
+  text-align: center;
+  line-height: 140rpx;
+  border-top: 10px solid #f5f4f4;
+}
+
+/* 粮食列表 */
+.top-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.name-box {
+  width: 95%;
+  height: 120rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.img-name {
+  display: flex;
+  align-items: center;
+}
+
+.name-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.name {
+  height: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grade-box {
+  height: 30rpx;
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.grade-box image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+}
+
+.score {
+  color: red;
+  font-size: 22rpx;
+  margin-left: 10rpx;
+}
+
+.grade {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.bottom-box {
+  display: flex;
+  padding: 20rpx;
+}
+
+.text-img {
+  width: 250rpx;
+  height: 240rpx;
+  border-radius: 5px;
+
+}
+
+.text-box {
+  width: 60%;
+  height: 240rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-1 {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.text-2 {
+  color:red;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.label {
+  display: flex;
+}
+
+.text-3 {
+  color: orange;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.number {
+  color: gray;
+  font-size: 22rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* 提示：没有更多啦 */
+.no_more {
+  height: 100rpx;
+  color: #a4a4a4;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 24rpx;
+}

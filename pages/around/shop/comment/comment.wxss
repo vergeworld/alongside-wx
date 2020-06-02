@@ -1,0 +1,128 @@
+page {
+  background-color: #f5f4f4;
+}
+
+/* 个人头像区 */
+.box {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f5f4f4;
+}
+
+.userinfo-img {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 100%;
+  margin-left: 20rpx;
+}
+
+.userinfo-nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+/* 文字输入区 */
+textarea {
+  width: 95%;
+  height: 100px;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+/* 图片选择区 */
+.scroll {
+  height: 280px;
+  padding-bottom: 20rpx;
+}
+
+.send-more-result-main {
+  padding: 20rpx 0 0 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.file-box {
+  height: 230rpx;
+  width: 230rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.imgs-box {
+  height: 230rpx;
+  width: 230rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4f4;
+}
+
+.deleting {
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.send-more-result-main image {
+  height: 100%;
+  width: 100%;
+}
+
+.remove-icon {
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}
+
+.img-box {
+  height: 100%;
+  width: 100%;
+
+}
+
+/* 分享按钮 */
+.butm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150rpx;
+  border-radius: 45px;
+  background-color: #3f0;
+}
+
+.Canvas {
+  position: absolute;
+  left: -100000px;
+  bottom: -111111px;
+  height: 1000px;
+  width: 1000px;
+}

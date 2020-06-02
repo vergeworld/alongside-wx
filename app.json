@@ -1,0 +1,112 @@
+{
+  "pages": [
+    "pages/forum/forum",
+    "pages/forum/share/share",
+    "pages/forum/comment/comment",
+    "pages/forum/my/my",
+
+    "pages/login/login",
+    "pages/login/pay/pay",
+
+    "pages/around/around",
+    "pages/around/review/review",
+    "pages/around/review/store/store",
+    "pages/around/review/search/search",
+    "pages/around/job/job",
+    "pages/around/job/join/join",
+    "pages/around/job/detail/detail",
+    "pages/around/go/go",
+    "pages/around/shop/shop",
+    "pages/around/shop/car/car",
+    "pages/around/shop/detail/detail",
+    "pages/around/shop/search/search",
+    "pages/around/shop/comment/comment",
+    "pages/around/book/book",
+    "pages/around/book/publish/publish",
+    "pages/around/book/search/search",
+    "pages/around/book/detail/detail",
+    "pages/around/view/view",
+    "pages/around/water/water",
+    "pages/around/water/format/format",
+    "pages/around/lost/lost",
+    "pages/around/lost/upload/upload",
+    "pages/around/lost/search/search",
+    "pages/around/market/market",
+    "pages/around/market/detail/detail",
+    "pages/around/market/search/search",
+    "pages/around/market/mygoods/mygoods",
+    "pages/around/market/upload/upload",
+    "pages/around/package/package",
+    "pages/around/package/format/format",
+
+    "pages/drive/drive",
+    "pages/drive/type/type",
+    "pages/drive/detail/detail",
+    "pages/drive/signup/signup",
+
+    "pages/my/my",
+    "pages/my/person/person",
+    "pages/my/person/name/name",
+    "pages/my/person/gender/gender",
+    "pages/my/person/school/school",
+    "pages/my/person/label/label",
+    "pages/my/site/site",
+    "pages/my/order/order",
+    "pages/my/order/snacks/snacks",
+    "pages/my/order/package/package",
+    "pages/my/order/package/detail/detail",
+    "pages/my/share/share",
+    "pages/my/publish/publish",
+    "pages/my/publish/announce/announce",
+    "pages/my/opinion/opinion",
+    "pages/my/service/service"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请点击确认"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 200
+  },
+  "tabBar": {
+    "selectedColor": "#02f598",
+    "list": [{
+        "pagePath": "pages/forum/forum",
+        "text": "首页",
+        "iconPath": "images/icon/1.0.png",
+        "selectedIconPath": "images/icon/1.1.png"
+      },
+      {
+        "pagePath": "pages/around/around",
+        "text": "服务",
+        "iconPath": "images/icon/1.2.png",
+        "selectedIconPath": "images/icon/1.3.png"
+      },
+      {
+        "pagePath": "pages/drive/drive",
+        "text": "学车",
+        "iconPath": "images/icon/1.4.png",
+        "selectedIconPath": "images/icon/1.5.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/icon/1.6.png",
+        "selectedIconPath": "images/icon/1.7.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 2000,
+    "downloadFile": 2000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

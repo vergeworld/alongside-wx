@@ -1,0 +1,140 @@
+page {
+  background-color: #f5f4f4;
+}
+
+/* 个人头像区 */
+.box {
+  height: 100rpx;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f5f4f4;
+}
+
+.url_name {
+  display: flex;
+  align-items: center;
+}
+
+.userinfo-img {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100%;
+}
+
+.userinfo-nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+.publish {
+  width: 120rpx;
+  color: white;
+  font-size: 26rpx;
+  font-weight: bold;
+  height: 60rpx;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #02f598;
+}
+
+button::after{
+  border: none;
+}
+
+/* 文字输入区 */
+textarea {
+  width: 95%;
+  height: 100px;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+/* 图片选择区 */
+.send-more-result-main {
+  padding: 20rpx 0 20rpx 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.file-box {
+  height: 230rpx;
+  width: 232rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.imgs-box {
+  height: 230rpx;
+  width: 232rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4f4;
+}
+
+.deleting {
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.send-more-result-main image {
+  height: 100%;
+  width: 100%;
+}
+
+.remove-icon {
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}
+
+.img-box {
+  height: 100%;
+  width: 100%;
+
+}
+
+.label {
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.label image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.Canvas {
+  position: absolute;
+  left: -100000px;
+  bottom: -111111px;
+  height: 1000px;
+  width: 1000px;
+}

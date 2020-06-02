@@ -1,0 +1,29 @@
+page {
+  background-color: #f3f4f6;
+}
+
+.name {
+  padding: 20rpx;
+  background-color: white;
+  border-top: 1px solid #f5f4f4;
+}
+
+.input_box {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #02f598;
+}
+
+
+.remark {
+  padding: 10rpx 0rpx;
+  font-size: 26rpx;
+}
+
+button {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20rpx;
+  right: 20rpx;
+  background-color: #02f598;
+}

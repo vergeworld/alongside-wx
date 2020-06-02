@@ -1,0 +1,59 @@
+<form catchsubmit="formSubmit">
+	<view class="submit">
+
+		<!-- 个人信息区 -->
+		<view class="box">
+			<view class="user_box">
+				<image class="userinfo-img" src="{{url}}" mode="cover"></image>
+				<text class="userinfo-nickname">{{name}}</text>
+			</view>
+			<!-- 分享按钮 -->
+			<view>
+				<button class="publish" formType="submit">发表</button>
+			</view>
+		</view>
+
+		<view class="meg-box">
+			<text class="meg">书籍名称</text>
+			<input selectable value='{{value}}' name="input0" placeholder="请输入书籍名称"></input>
+		</view>
+		<view class="meg-box">
+			<text class="meg">书籍作者</text>
+			<input selectable name="input1" value='{{value}}' placeholder="请输入书籍作者"></input>
+		</view>
+		<view class="meg-box">
+			<text class="meg">经典句子</text>
+			<input selectable name="input2" value='{{value}}' placeholder="你认为最好句子"></input>
+		</view>
+		<!-- 文本输入框 -->
+		<view class="depict-box">
+			<view>推荐理由</view>
+			<view class="txt_depict">
+				<textarea maxlength="-1" value="{{value}}" name="textarea" placeholder="说一下推荐理由"></textarea>
+			</view>
+		</view>
+
+
+		<view class="send-more-result-main">
+			<!-- 图片展示区 -->
+			<block wx:for="{{ons}}" wx:for-index="idx" wx:key="st">
+				<view class="file-box {{deleteIndex==idx?'deleting':''}}">
+					<view class="img-box">
+						<image src="{{item}}" mode="aspectFill"></image>
+						<icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}" />
+					</view>
+				</view>
+			</block>
+
+			<!-- 图片视频选择按钮 -->
+			<view class="imgs-box" catchtap="chooseImage" data-category="album">
+				<image src="/images/icon/1.8.png" name="image" style="height:80rpx; width:85rpx;"></image>
+			</view>
+			<view class="imgs-box" catchtap="chooseImage" data-category="camera">
+				<image src="/images/icon/1.9.png" style="height:80rpx; width:80rpx;"></image>
+			</view>
+		</view>
+	</view>
+</form>
+
+<canvas style="width: {{cw}}px; height: {{ch}}px;" canvas-id='firstCanvas' class='Canvas'></canvas>

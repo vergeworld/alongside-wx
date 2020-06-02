@@ -1,0 +1,70 @@
+<view class="ipt" bindtap="search">
+	<view>
+		<icon type="search" size="16"></icon>
+		<input style="margin-left:10rpx" disabled="true" placeholder="搜索商品"></input>
+	</view>
+</view>
+
+<!-- 左右联动 -->
+<view class='HZL_scroll' wx:if="{{show}}">
+	<!-- 左 -->
+	<scroll-view class='HZL_scroll_left' scroll-with-animation="true" scroll-y style="height:{{HZL_height}}px" scroll-top="{{HZL_leftToTop}}">
+		<view wx:for="{{constants}}" wx:key="id" bindtap="left" data-id="{{item.id}}" class='{{item.id === HZL_currentLeftSelect ?"HZL_scroll_left_text_active":"HZL_scroll_left_text"}}'>
+			<view id="{{item.id}}">{{item.name}}</view>
+		</view>
+	</scroll-view>
+
+	<!-- 右 -->
+	<scroll-view scroll-with-animation="true" scroll-y style="height:{{HZL_height}}px" bindscroll="right" scroll-into-view="{{HZL_toView}}" class='HZL_scroll_right'>
+
+
+		<view wx:for="{{constants}}" wx:for-index='parentIndex' wx:key="id" id="{{item.id}}">
+			<view style="height:20rpx"></view>
+			<view class="HZL_scroll_right_top">
+				<view class="name_depict">
+					<text class="snacks_name">{{item.name}}</text>
+					<text class="snacks_depict">{{item.depict}}</text>
+				</view>
+				<image class="snacks_img" src="{{item.img}}"></image>
+			</view>
+
+			<!-- 零食列表 -->
+			<view class="content">
+				<block wx:for="{{item.category}}" wx:key="index">
+					<view class="text-box">
+					
+						<!-- bindtap="detail" -->
+						<view class="detail" data-id="{{item._id}}">
+							<image mode="aspectFill" class="text-img" src="{{item.img}}" />
+							<text class="txt-tit">{{item.name}}</text>
+						</view>
+						<view class="botm">
+							<view class="botm1">
+								<text class="txt-price" >￥<text style="font-size:26rpx;">{{item.price}}</text></text>
+								<text class="buy">销量：{{item.buy}}</text>
+							</view>
+							<view class="addimg" bindtap="add" data-id="{{item._id}}">
+								<!-- <image src="/images/icon/5.3.png"></image> -->
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class="no_more">
+			<image src="/images/icon/4.6.png"></image>
+			<text>—就这么多啦—</text>
+		</view>
+	</scroll-view>
+
+	<!-- 购物车 -->
+	<view class="car" bindtap="car">
+		<!-- <image src="/images/icon/5.2.png"></image> -->
+	</view>
+
+</view>
+
+<view wx:else class="loading">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>

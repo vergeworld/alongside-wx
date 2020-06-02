@@ -1,0 +1,67 @@
+/********返回按钮*********/
+.back {
+  width: 120rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back image {
+  width: 18rpx;
+  height: 30rpx;
+  margin: 80rpx 0 0 40rpx;
+}
+
+/********个人主页*********/
+.headBox {
+  color: white;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff0000;
+}
+
+@import "../../../css/my.wxss";
+
+/********内容列表*********/
+@import "../../../css/forum.wxss";
+
+.more{
+  display: none;
+}
+
+/********底部隐藏条*********/
+.bottom {
+  width: 100%;
+  color: gray;
+  font-size: 28rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+/* 加载显示 */
+.loading {
+  width: 100%;
+  height: 65%;
+  color: #a4a4a4;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #f5f4f4;
+}
+
+.loading image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.loading view {
+  margin-top: -65rpx;
+}

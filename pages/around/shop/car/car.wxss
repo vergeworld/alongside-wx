@@ -1,0 +1,194 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f4f4;
+}
+
+.top-box {
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.name-box {
+  height: 80rpx;
+  display: flex;
+  padding-bottom: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.name-box view {
+  display: flex;
+  align-items: center;
+}
+
+.name-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.more {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 40rpx;
+}
+
+.bottom-box {
+  display: flex;
+  padding-top: 20rpx;
+}
+
+.text-img {
+  width: 250rpx;
+  height: 240rpx;
+  border-radius: 5px;
+}
+
+.text-box {
+  width: 60%;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+}
+
+
+.txt-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.txt-price {
+  color: red;
+  margin-right: 20rpx;
+}
+
+.txt-taste {
+  font-size: 28rpx;
+}
+
+/* 数量累计 */
+.number {
+  color: gray;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.num-img {
+  width: 160rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+.num-img image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 结算 */
+.addup {
+  color: red;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.addup view {
+  display: flex;
+  align-items: centerc;
+}
+
+.site {
+  width: 100rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.site image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.site text {
+  color: gray;
+  font-size: 20rpx;
+}
+
+.cost {
+  margin-right: 20rpx;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fee {
+  color: black;
+  font-weight: bold;
+}
+
+.tip {
+  color: gray;
+  font-size: 20rpx;
+}
+
+.butn {
+  width: 300rpx;
+  height: 100rpx;
+  margin-right: 0;
+  background-color: turquoise;
+}
+
+button {
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: turquoise;
+}
+
+.elsebox {
+  width: 99%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-top: 1px solid #f5f4f4;
+}
+
+.elsebox image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 20rpx;
+}
+
+.elsebox text {
+  color: #a4a4a4;
+  font-size: 26rpx;
+}

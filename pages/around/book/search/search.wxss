@@ -1,0 +1,171 @@
+page {
+  background-color: #fafafa;
+}
+
+/* 搜索框 */
+.ipt-box {
+  padding: 20rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.ipt {
+  width: 670rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx 0 20rpx;
+  border-radius: 50px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+input {
+  width: 95%;
+  margin-left: 10rpx;
+}
+
+.icon-clear {
+  width: 60rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 店铺内容 */
+.top-box {
+  margin: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
+.name-box {
+  width: 95%;
+  height: 120rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f4f4;
+}
+
+.name-box view {
+  display: flex;
+}
+
+
+.name-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.name view {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.name view image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 8rpx;
+}
+
+.time {
+  color: gray;
+  font-size: 22rpx;
+}
+
+.bottom-box {
+  display: flex;
+  padding: 20rpx;
+}
+
+.text-img {
+  width: 250rpx;
+  height: 240rpx;
+  border-radius: 5px;
+
+}
+
+.text-box {
+  width: 60%;
+  height: 240rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book {
+  font-size: 26rpx;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reason {
+  font-size: 26rpx;
+  width: 100%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.author {
+  font-size: 26rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.number {
+  color: gray;
+  font-size: 22rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.blank-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank-box image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.blank-box text {
+  color: #a4a4a4;
+  font-size: 26rpx;
+  font-weight: bold;
+}

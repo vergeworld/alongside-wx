@@ -1,0 +1,59 @@
+<view class="sw_box">
+	<swiper class="sw" autoplay circular>
+		<block wx:for="{{swiper}}" wx:key="st">
+			<swiper-item>
+				<image class="sw_img" mode="aspectFill" src="{{item}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<import src="../../../html/serach.wxml" />
+<template is="search" data="{{placeholder}}"></template>
+
+<view class="cir_box"  wx:if="{{swiper[0]}}">
+	<view class="circle"></view>
+</view>
+
+
+
+<!-- 书籍列表  -->
+<block wx:for="{{postList}}" wx:for-item="item" wx:key="index">
+	<view class="top-box" bindtap="detail" data-id="{{item._id}}">
+		<view class="name-box">
+			<view class="img-name">
+				<image class="name-img" mode="aspectFill" src="{{item.url}}" />
+				<view class="name">
+					<text>{{item.name}}</text>
+					<text class="time">{{item.time}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="bottom-box">
+			<image class="text-img" mode="aspectFill" src="{{item.img}}"></image>
+			<view class="text-box">
+				<text class="book">书籍名称：{{item.book}}</text>
+				<text class="reason">推荐理由：{{item.reason}}</text>
+				<text class="author">书籍作者：{{item.author}}</text>
+				<view class="number">
+					<text>{{item.read}}人查看</text>
+					<text>{{item.comment}}人评论</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>
+
+<view class="no_more" wx:if="{{isfixed && not_more}}">
+	<text>—没有更多内容啦—</text>
+</view>
+
+<view class="loading" wx:if="{{not_net}}">
+	<image src="{{loadImg}}"></image>
+	<view>{{loadTxt}}</view>
+</view>
+
+<view class="loading" wx:if="{{not_order}}">
+	<image src="{{loadImg}}" style="width:160rpx;height:160rpx"></image>
+	<view style="margin:30rpx">{{loadTxt}}</view>
+</view>

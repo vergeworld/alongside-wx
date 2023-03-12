@@ -1,0 +1,36 @@
+/* 个人背景框 */
+.userBox {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.name {
+  width: 200px;
+  font-size: 25px;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.urlBox {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: white;
+  overflow: hidden;
+}
+
+.urlBox image {
+  width: 100%;
+  height: 100%;
+}

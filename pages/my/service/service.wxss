@@ -1,78 +1,47 @@
 page {
-  background-color: #f3f4f6;
+  background-color: var(--themeColor);
 }
 
 /* QQ图片 */
-.bottom {
-  margin: 10px;
+.loading {
+  margin: 0 10px 10px;
+  height: 325px;
   padding: 20px;
-  background-color: white;
-}
-
-.xuexiao {
-  font-size: 28rpx;
-  font-weight: bold;
-  margin-left: 10rpx;
-}
-
-.title-img{
-  width: 30px;
-  height: 30px;
-}
-
-.img-box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.img-box image {
-  width: 400rpx;
-  height: 395rpx;
-}
-
-.save-txet {
-  font-size: 20rpx;
-  margin-top: 50rpx;
-  color: gray;
-}
-
-/* 电话框 */
-.service-box {
-  width: 89.5%;
-  padding: 20rpx;
-  margin: 20rpx 0 0 20rpx;
+  justify-content: center;
   background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.service-phone {
+.loading image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* QQ图片 */
+.img_wrp {
+  margin: 0 20rpx 20rpx;
+}
+
+.img_wrp image {
   width: 100%;
-  height: 80rpx;
-  margin: 40rpx 0 0 0rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-}
-
-.phoneBox {
-  display: flex;
-  align-items: center;
-}
-
-.phoneBox text{
-  margin-left: 10rpx;
+  height: 533px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 
 /* 在线客服  */
 button {
-  color: white;
+  width: 95%;
+  color: var(--themeColor);
   font-weight: bold;
-  width: 80%;
-  margin-top: 100px;
-  margin-left: 70rpx;
-  border-radius: 25px;
-  background-color: #02f598;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+button::after {
+  border: none;
 }

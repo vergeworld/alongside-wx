@@ -1,0 +1,128 @@
+page {
+  padding-top: 47px;
+  box-sizing: border-box;
+  background-color: white !important;
+}
+
+/* header */
+.header {
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 10rpx 10rpx rgba(223, 220, 220, 0.6);
+}
+
+.header>.intent {
+  display: flex;
+  align-items: center;
+}
+
+.header>.intent>image {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.header .intent>view {
+  display: flex;
+  align-items: center;
+}
+
+.header .intent>view text {
+  max-width: 152rpx;
+  display: block;
+  line-height: 45px;
+  padding: 0 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.header .intent>view text:nth-child(2) {
+  padding: 0;
+}
+
+.header .intent>view image {
+  width: 15px;
+  height: 4.37px;
+}
+
+.header .type {
+  display: flex;
+}
+
+.type-box {
+  background-color: #eee;
+  padding: 8rpx 10rpx;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* 幻灯片 */
+.slideShow {
+  margin: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10rpx;
+  /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3) */
+  box-shadow: 0 0 10rpx 10rpx rgba(223, 220, 220, 0.6);
+}
+
+.slideShow image {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 10rpx;
+}
+
+/* other */
+@import '../../css/system.wxss';
+
+.loading {
+  top: 105px;
+}
+
+.main-wrapper {
+  padding-bottom: 1rpx;
+}
+
+@import '../../css/post.wxss';
+
+.post-container {
+  box-shadow: 0 0 10rpx 10rpx rgba(223, 220, 220, 0.6);
+}
+
+.loading {
+  top: 78px;
+}
+
+.carvas {
+  width: 100%;
+  height: fit-content;
+  background-color: gray;
+}
+
+.isNo {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isNo image {
+  width: 80px;
+  height: 80px;
+}

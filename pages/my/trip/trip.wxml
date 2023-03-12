@@ -1,0 +1,29 @@
+<import src="/html/post.wxml" />
+<!-- 个人主页 -->
+<view>
+	<view class="userBox" wx:if="{{userInfo.nickName}}">
+		<view class="urlBox">
+			<image mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+		</view>
+		<text class="size-46">{{userInfo.nickName}}</text>
+		<text class="size-36" wx:if="{{userInfo.label}}">{{userInfo.label}}</text>
+		<text class="name size-36" wx:else>一切美好将要发生。</text>
+	</view>
+</view>
+<!-- 帖子内容 -->
+<view wx:if="{{postList[0] && userInfo.nickName}}">
+	<block wx:for="{{postList}}" wx:for-index="index" wx:key="id">
+		<template is="post" data="{{item,index,openId}}" />
+	</block>
+</view>
+
+
+<view class="blank-box" wx:if="{{notPost}}" style="height:{{screen_height}}px" >
+	<image src="{{icon.notPost}}"></image>
+	<text style="font-size:15px">你还没有任何动态哦</text>
+</view>
+
+<view class="loadeMore" wx:if="{{moreTxt}}">
+	<image wx:if="{{moreTxt == '正在加载更多...'}}" src="/images/post/loading.gif" />
+	<text>{{moreTxt}}</text>
+</view>

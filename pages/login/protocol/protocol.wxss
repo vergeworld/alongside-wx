@@ -1,0 +1,22 @@
+page{
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+view{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+image{
+  width: 20px;
+  height: 20px;
+  margin-right: 10rpx;
+  border-radius: 5px;
+}
+
+text{
+  line-height: 30px;
+}

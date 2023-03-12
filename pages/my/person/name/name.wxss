@@ -10,9 +10,12 @@ page {
 
 .input_box {
   padding: 20rpx 0;
-  border-bottom: 1px solid #02f598;
 }
 
+input {
+  width: 500rpx;
+  font-weight: bold;
+}
 
 .remark {
   padding: 10rpx 0rpx;
@@ -20,10 +23,16 @@ page {
 }
 
 button {
+  width: 15%;
   color: white;
+  font-size: 32rpx;
+  line-height: 30px;
   position: absolute;
-  bottom: 20px;
-  left: 20rpx;
+  top: 16px;
   right: 20rpx;
-  background-color: #02f598;
+  padding: 0;
+}
+
+button::after {
+  border: none;
 }

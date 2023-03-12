@@ -1,121 +1,121 @@
+const wxUser = getApp().globalData
 const db = wx.cloud.database();
-var nickName
-var avatarUrl
-var openId
-var gender
+const util = require("../../utils/util.js");
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
+
   // 获取用户信息点击登录
   getUserInfo: function (e) {
-    var that = this
-    wx.showLoading({
-      title: '正在登陆...',
-    })
-    wx.cloud.callFunction({
-      name: 'getOpenid',
-      success(res) {
-        var openId = res.result.openid;
-        db.collection('user').where({
-          _openid: openId
-        }).get({
+    let that = this
+    wx.getUserProfile({
+      desc: '获取用户个人信息',
+      success: (res) => {
+        let userData = res.rawData
+        // let userData = res.userInfo
+        wx.showLoading({
+          title: '正在登陆...',
+        })
+        // 获取用户微信公开ID
+        wx.cloud.callFunction({
+          name: 'getOpenid',
           success(res) {
-            var user = res.data[0]
-            wx.setStorageSync('openId', openId);
-            if (res.data[0]) {
-              var id = user._id;
-              var img = user.url;
-              var name = user.name;
-              var gender = user.gender;
-              var school = user.school;
-              var label = user.label;
-              wx.setStorageSync('id', id);
-              wx.setStorageSync('name', name);
-              wx.setStorageSync('img', img);
-              wx.setStorageSync('gender', gender);
-              wx.setStorageSync('school', school);
-              wx.setStorageSync('label', label);
-              that.get_site()
-            } else {
-              wx.getSetting({
-                success(res) {
-                  wx.getUserInfo({
-                    success(res) {
-                      nickName = res.userInfo.nickName; //用户名
-                      avatarUrl = res.userInfo.avatarUrl; //用户头像
-                      gender = res.userInfo.gender; //用户性别
-                      if (gender == 2) {
-                        gender = '女'
-                      } else if (gender == 1) {
-                        gender = '男'
-                      } else {
-                        gender = ''
-                      }
-                      wx.setStorageSync('name', nickName);
-                      wx.setStorageSync('img', avatarUrl);
-                      wx.setStorageSync('gender', gender);
-                      wx.setStorageSync('school', '桂林理工大学·空港校区');
-                      wx.setStorageSync('label', '');
-                      that.add_account();
-                      that.get_site();
-                    }
-                  })
+            var openId = res.result.openid;
+            // 查询用户是否存在
+            db.collection('user').where({
+              _openid: openId
+            }).get({
+              success(res) {
+                // 判断返回结果是否为空
+                if (res.data[0]) {
+                  wx.setStorageSync('userInfo', res.data[0]);
+                  wx.setStorageSync('userStatus', 1); // 0：未登录 1：登录
+                  wx.setStorageSync('isReloadHome', true)
+                  wx.navigateBack()
+                } else {
+                  that.onRegister(userData, openId)
                 }
-              })
-            }
+              },
+              fail() {
+                wx.hideLoading()
+              },
+            })
+          },
+          fail(err) {
+            wx.hideLoading()
+            wx.showModal({
+              showCancel: false,
+              content: '网络出错，请重新登陆！'
+            })
           }
         })
       },
-      fail() {
-        wx.showModal({
-          confirmColor: 'red',
-          showCancel: false,
-          content: '登陆失败，请重新登陆。'
+      fail: (res) => {
+        wx.showToast({
+          title: '信息授权失败~',
+          duration: 1000,
+          icon: 'error',
+          mask: true
         })
+        wx.navigateBack()
       }
     })
-},
-
-add_account(){
-  db.collection("user").add({
-    data: {
-      name: nickName,
-      url: avatarUrl,
-      gender: gender,
-      school: '桂林理工大学·空港校区',
-      label: '',
-      praise: 0,
-      comment: 0,
-      read: 0
-    }
-  })
-},
-
-  // 获取当前用户地址
-  get_site() {
-    var receiver = wx.getStorageSync('receiver')
-    if (!receiver) {
-      db.collection('site').get({
-        success(res) {
-          var post = res.data[0]
-          var receiver = post.receiver
-          var phone = post.phone
-          var site = post.site
-          wx.setStorageSync('receiver', receiver)
-          wx.setStorageSync('phone', phone)
-          wx.setStorageSync('site', site)
-        },complete(){
-          wx.hideLoading()
-          wx.navigateBack()
-        }
-      })
-    }
   },
 
-  service() {
+  onRegister(userData, openId) {
+    userData = JSON.parse(userData)
+    let id = 'verge' + Math.round(new Date()); //用户id
+    let nickName = '新人用户' //用户名
+    let avatarUrl = userData.avatarUrl //用户头像
+    let gender = '' //用户性别
+    let phone = '' //电话
+    let label = '' //签名
+    let address = { //地址
+      value: [], //地区名称
+      code: [] //地区编号
+    } 
+    let time = util.formatTime(new Date()) //创建时间
+    db.collection("user").add({
+      data: {
+        _id: id,
+        nickName,
+        avatarUrl,
+        gender,
+        phone,
+        label,
+        address,
+        time
+      },
+      success() {
+        let user = {
+          _id: id,
+          _openid: openId,
+          nickName,
+          avatarUrl,
+          gender,
+          phone,
+          label,
+          address,
+          time
+        }
+        wx.setStorageSync('userInfo', user);
+        wx.redirectTo({
+          url: './../my/person/person',
+        })
+        wx.setStorageSync('userStatus', 1); // 0：未登录 1：登录
+        wx.setStorageSync('isReloadHome', true)
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
+  },
+
+
+  toProtocol() {
     wx.navigateTo({
-      url: '../my/service/service',
+      url: '/pages/login/protocol/protocol',
     })
   }
 })

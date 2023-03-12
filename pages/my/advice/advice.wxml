@@ -1,0 +1,8 @@
+<form catchsubmit="formSubmit">
+	<view class="opinionBox">
+		<textarea value="{{value}}" maxlength="-1" name="textarea" placeholder="你的参与,将是我们前进的动力"> </textarea>
+		<import src="/html/util.wxml" />
+    <template is="addPhoto" data="{{upImgs}}" />
+	</view>
+	<button class="bc-theme" formType="submit">提交</button>
+</form>

@@ -1,0 +1,272 @@
+page {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20rpx 60px;
+  background: var(--themeColor);
+}
+
+
+.header>text {
+  max-width: 120px;
+  margin-left: 20rpx;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+
+.header image {
+  width: 200px;
+  height: 100px;
+}
+
+.publish-header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+.topBox {
+  color: white;
+  font-weight: bold;
+  background: #000;
+  padding: 35px 30rpx 10px;
+}
+
+.topBox view {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Meiryo;
+  margin-left: 20rpx;
+}
+
+
+/************** 底部内容区 ************/
+
+.publish-body {
+  margin: -60px 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navBox {
+  height: 50px;
+  padding: 0 20px;
+  background-color: white;
+}
+
+
+.nav-item {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.nav-item.active {
+  color: #02a871;
+}
+
+.nav-item.active text {
+  display: inline-block;
+  line-height: 30px;
+  border-bottom: 3px solid var(--themeColor);
+}
+
+
+.tab-box {
+  height: 450px;
+  background-color: white;
+}
+
+.tab-content {
+  overflow-y: scroll;
+  padding: 0px 40rpx 20px;
+  box-sizing: border-box;
+}
+
+/* 表单内容 */
+.formSumit {
+  background-color: white;
+}
+
+/* 我是车主 */
+
+.driver_swiperItem,
+.passenger_swiperItem {
+  height: 380px;
+  box-sizing: border-box;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.driver_swiperItem>.intent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.driver_swiperItem .intent {
+  display: flex;
+  align-items: center;
+}
+
+.driver_swiperItem .intent image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.driver_swiperItem .intent text {
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-size: 46rpx;
+  font-weight: bold;
+}
+
+.intent .icon-toyCar-fill {
+  font-size: 70rpx !important;
+  font-weight: normal !important;
+}
+
+
+.meg-box {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+
+.meg-box:nth-of-type(n) {
+  border-bottom: 1px solid #e3e3e4;
+}
+
+.meg-box:last-of-type,
+.driver_swiperItem .meg-box:nth-of-type(3) {
+  border-bottom: none;
+}
+
+.meg-box text {
+  font-weight: bold;
+  vertical-align: baseline;
+}
+
+.icon-date {
+  margin-top: 1px;
+}
+
+.meg-box>text text {
+  font-size: 36rpx;
+  margin-right: 6rpx;
+}
+
+.meg-box .dateImg {
+  width: 20px;
+  height: 20px;
+  margin-right: 20rpx;
+}
+
+.pick-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.give-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.picker {
+  width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 13px;
+  height: 13px;
+}
+
+.picker text text {
+  margin-left: 20rpx;
+}
+
+.codeBox {
+  display: flex;
+  align-items: center;
+  padding-bottom: 13px;
+}
+
+/* 文字输入区 */
+textarea {
+  width: 100%;
+  height: 95px;
+}
+
+.passenger_swiperItem textarea {
+  height: 122px;
+}
+
+@import '/css/upImg.wxss';
+
+.send-more-result-main {
+  margin-left: -20rpx;
+}
+
+.imgs-box {
+  margin-top: 0;
+}
+
+
+
+.butm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  flex: 1;
+  border-radius: 10px;
+  margin: 0;
+  background-color: #02f598;
+}
+
+button::after {
+  border: none;
+}

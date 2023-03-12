@@ -1,0 +1,67 @@
+<import src="/html/util.wxml" />
+
+<view wx:if="{{post}}">
+
+
+  <!-- header -->
+  <view class="header">
+    <view class="author">
+      <view catchtap="toPersion" data-id="{{post._openid}}">
+        <image class="headimg" mode="aspectFill" src="{{post.avatarUrl}}" />
+        <view class="nickname">
+          <text class="post-title" selectable>{{post.nickName}}</text>
+          <text class="type bc-theme color-white">{{post.type ? '人找车' : '车找人'}}</text>
+        </view>
+      </view>
+      <view class="phone_wrp">
+      <text bindtap="tel" data-phone="{{post.phone}}" class="iconfont icon-call color-red size-46"></text>
+      <text>拨打电话</text>
+      </view>
+    </view>
+    <view class="route">
+      <view>
+      <text class="color-theme">出发地点：</text>
+      <text space="nbsp">{{post.fromValue[1]}} </text>
+      <text space="nbsp">{{post.fromValue[2]}} </text>
+      <text space="nbsp" wx:if="{{post.fromValue[3]}}">{{post.fromValue[3]}}</text>
+      </view>
+
+      <view>
+      <text class="color-theme">到达地点：</text>
+      <text space="nbsp">{{post.toValue[1]}} </text>
+      <text space="nbsp">{{post.toValue[2]}} </text>
+      <text space="nbsp" wx:if="{{post.toValue[3]}}">{{post.toValue[3]}}</text>
+      </view>
+      <view>
+      <text class="color-theme">出发时间：</text>
+      <text>{{post.date}}</text>
+      </view>
+    </view>
+    <text class="post-content" selectable wx:if="{{post.content}}">{{post.content}}</text>
+    <view class="img_box" wx:if="{{post.imgs[0]}}">
+      <view>
+        <block wx:for="{{post.imgs}}" wx:for-index="idx" wx:for-item="img" wx:key="st">
+          <image id="{{index}}" data-list="{{post.imgs}}" data-src="{{img}}" bindtap="postPrevieww" mode="{{post.mode?post.mode:'aspectFill'}}" style="width: {{idx == 0 ? post.imgW :  '' }}rpx;height:{{idx == 0 ? post.imgH : ''}}px;width: {{idx == 1 ? post.mgW :  '' }}rpx;height:{{idx == 1 ? post.mgH : ''}}px;" src="{{img}}" />
+        </block>
+      </view>
+    </view>
+    <!-- 查看 -->
+    <view class="post_footer">
+      <text class="post-date">{{post.time}}</text>
+      <text class="size-26 bold color-gray">浏览 {{post.read}}</text>
+    </view>
+  </view>
+
+  <!-- 评论内容 -->
+  <view class="all_comt">
+    <text>全部评论</text>（ {{len}} ）
+  </view>
+  <template is="comment" data="{{commentList,openId}}" />
+  <template is="input_box" data="{{value,disabled}}"></template>
+</view>
+
+<import src="/html/system.wxml" />
+<template is="loading" data="{{not_net}}" />
+
+<!-- 画布 -->
+<canvas style="width: {{cw}}px; height: {{ch}}px;" canvas-id='firstCanvas' class='Canvas'></canvas>

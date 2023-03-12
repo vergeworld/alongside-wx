@@ -1,13 +1,150 @@
-page{
+@import './styles/iconfont.wxss';
+
+page {
   width: 100%;
   height: 100%;
+  background-color: #f4f5fa;
+  --themeColor:#02a871;
 }
 
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+
+/* view */
+.bc-theme {
+  background-color: var(--themeColor);
+}
+
+.bc-red {
+  background-color: red;
+}
+
+.bc-gray {
+  background-color: #a7acc9;
+}
+
+.bc-gold {
+  background-color: #bb8a35;
+}
+
+/* border */
+br {
+  border: 10px;
+}
+
+.br-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.br-bottom{
+  border-bottom: 2px solid #02a871;
+}
+
+
+/* text */
+.color-theme {
+  color: #02a871;
+}
+
+.color-red {
+  color: red;
+}
+
+
+.color-gray {
+  color: gray;
+}
+
+.color-lightgray{
+  color: #f3f4f6;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-gold {
+  color: #bb8a35;
+}
+
+.color-black{
+  color: black;
+}
+
+.color-blue{
+  color: blue;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* font-size */
+
+.size-16 {
+  font-size: 16rpx;
+}
+
+.size-20{
+  font-size: 20rpx;
+}
+
+.size-26 {
+  font-size: 26rpx;
+}
+
+
+.size-36 {
+  font-size: 36rpx;
+}
+
+.size-46 {
+  font-size: 46rpx;
+}
+
+.size-56 {
+  font-size: 56rpx;
+}
+
+.end{
+  text-align: end;
+}
+
+.center {
+  text-align: center;
+}
+
+.tj{
+  text-align: justify;
+}
+
+/* line-height */
+.lh-40{
+  line-height: 40px;
+}
+
+.lh-50 {
+  line-height: 50px;
+}
+
+
+/* image */
+.width-fit {
+  width: 100%;
+}
+
+/* margin */
+.margin-l-10{
+  margin-left: 10rpx;
+}
+
+.margin-l-20{
+  margin-left: 20rpx;
+}
+
+.margin-r-10{
+  margin-right: 10rpx;
+}
+
+.margin-r-20{
+  margin-right: 20rpx;
 }

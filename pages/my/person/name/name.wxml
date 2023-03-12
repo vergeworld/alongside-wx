@@ -1,8 +1,8 @@
 <view class="name">
-	<view class="input_box">
-		<input maxlength="16" bindinput="input" auto-focus value="{{name}}" placeholder="我的昵称" />
+	<view class="input_box br-bottom">
+		<input maxlength="12" bindinput="input" type="nickname" auto-focus value="{{nickName}}" placeholder="我的昵称" />
 	</view>
 	<text class="remark">好的名字让人更容易记住。</text>
 </view>
 
-<button bindtap="save">保 存</button>
+<button disabled="{{disabled}}" bindtap="save" class="bc-theme">保存</button>

@@ -1,0 +1,5 @@
+<rich-text nodes="{{content}}"></rich-text>
+
+<rich-text>
+
+</rich-text>

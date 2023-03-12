@@ -4,51 +4,63 @@ Page({
 
   },
   onLoad: function (options) {
-    var name = wx.getStorageSync('name')
+    var userInfo = wx.getStorageSync('userInfo')
     this.setData({
-      name
+      userInfo,
+      disabled: true,
+      nickName: userInfo.nickName
     })
   },
 
   input(e) {
-    var name = e.detail.value
-    this.data.name = name
+    var old_name = this.data.userInfo.nickName
+    var nickName = e.detail.value
+    if (nickName == old_name || nickName.length == 0) {
+      this.setData({
+        disabled: true
+      })
+    } else {
+      this.setData({
+        nickName,
+        disabled: false
+      })
+    }
   },
 
   save() {
     wx.showLoading({
       title: '正在保存...',
     })
-    var name = this.data.name
-    if (name) {
-      wx.setStorageSync('name', name)
-      var id = wx.getStorageSync('id')
-      var img = wx.getStorageSync('img')
-      db.collection('user').doc(id).update({
-        data: {
-          name: name
-        },
-      })
-      wx.cloud.callFunction({
-        name: 'forum',
-        data: {
-          name: name,
-          url: img
-        },
-        success(res) {
-          wx.navigateBack()
-        },
-        fail(err) {
-          wx.showToast({
-            title: '修改失败',
-            icon: 'none',
-            duration: 2000
-          })
-        },complete(){
-          wx.hideLoading()
-        }
-      })
-    }
-
+    var nickName = this.data.nickName
+    var userInfo = this.data.userInfo
+    var id = userInfo._id
+    db.collection('user').doc(id).update({
+      data: {
+        nickName
+      },
+    })
+    db.collection('trips').where({
+      _openid: userInfo._openid
+    }).update({
+      data: {
+        nickName,
+        avatarUrl:userInfo.avatarUrl
+      },
+      success(res) {
+        userInfo.nickName = nickName
+        wx.setStorageSync('userInfo', userInfo)
+        wx.navigateBack()
+      },
+      fail(err) {
+        wx.showToast({
+          title: '修改失败',
+          icon: 'none',
+          duration: 2000
+        })
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
   }
 })

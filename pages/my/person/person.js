@@ -1,162 +1,110 @@
 const db = wx.cloud.database();
+const _ = db.command
 Page({
   // 页面的初始数据
   data: {
-    img: '',
-    name: '',
-    gender: '',
-    school: '',
-    label: '',
+    arrowRight: '/images/arrow-right.png',
+    region: ['全部', '全部', '全部', '全部'],
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
-    var img = wx.getStorageSync('img');
-    var name = wx.getStorageSync('name');
-    var gender = wx.getStorageSync('gender')
-    var school = wx.getStorageSync('school');
-    var label = wx.getStorageSync('label')
-    this.setData({
-      img,
-      name,
-      gender,
-      school,
-      label
-    })
+
   },
 
   onShow() {
-    this.onLoad()
+    var userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      userInfo,
+      avatarUrl: userInfo.avatarUrl,
+      region: userInfo.address.value
+    })
+    let noPhone = wx.getStorageSync('noPhone');
+    if (noPhone) {
+      wx.removeStorageSync('noPhone')
+    }
   },
 
+
   chooseImage() {
-    var that = this
-    wx.chooseImage({
+    let that = this
+    wx.chooseMedia({
       count: 1,
-      sizeType: ['original'],
+      mediaType: ['image'],
       sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
       success(res) {
         wx.showLoading({
-          title: '正在保存...',
+          title: '正在修改...',
         })
-        var tempFiles = res.tempFiles;
-        if ((tempFiles[0].size) < 500000) {
-          that.uploadCanvasImg(tempFiles[0].path);
-        } else {
-          that.getImgInfo(tempFiles[0].path)
-        }
+        var tempPath = res.tempFiles[0].tempFilePath;
+        that.uploadCanvasImg(tempPath)
       },
     })
   },
 
-  getImgInfo(tempFilePaths) {
-    var that = this
-    wx.getImageInfo({
-      src: tempFilePaths,
-      success(res) {
-        var ratio = res.width / res.height
-        if (res.type == 'gif') {
-          that.uploadCanvasImg(res.path);
-        } else {
-          wx.getSystemInfo({
-            success(res) {
-              var pixelRatio = res.pixelRatio
-              var targetHeight, targetWidth
-              //等比例压缩，如果宽度大于高度，则宽度优先，否则高度优先
-              if (pixelRatio > 1) {
-                //宽>高
-                targetHeight = Math.round(140 * pixelRatio);
-                targetWidth = Math.round(targetHeight * ratio);
-              } else {
-                //宽<高
-                targetWidth = Math.round(140 * pixelRatio);
-                targetHeight = Math.round(targetWidth / ratio);
-              }
-              var ctx = wx.createCanvasContext('firstCanvas');
-              ctx.drawImage(tempFilePaths, 0, 0, targetWidth, targetHeight);
-              //裁剪画布
-              _this.setData({
-                cw: targetWidth,
-                ch: targetHeight
-              });
-              ctx.draw(false, function () {
-                setTimeout(function () {
-                  wx.canvasToTempFilePath({
-                    canvasId: 'firstCanvas',
-                    fileType: 'jpg',
-                    quality: 0.7, //图片质量
-                    success: res => {
-                      that.uploadCanvasImg(res.tempFilePath);
-                    },
-                    fail() {
-                      wx.showToast({
-                        title: '修改失败'
-                      })
-                    }
-                  }, this)
-                }, 100)
-              })
-            }
-          })
-        }
-      }
-    })
-  },
-
-  uploadCanvasImg(res) {
+  uploadCanvasImg(tempPath) {
     var that = this
     let timestamp = Math.round(new Date());
-    const filePath = res;
+    const filePath = tempPath;
     const cloudPath = 'user/' + timestamp + filePath.match(/\.[^.]+?$/)[0]
     wx.cloud.uploadFile({
       cloudPath,
       filePath,
       success: res => {
-        var img = res.fileID
-        wx.setStorageSync('img', img)
+        var avatarUrl = res.fileID
         that.setData({
-          img
+          avatarUrl
         })
-        that.upload_img(img)
+        that.upload_img(avatarUrl)
       },
       fail(err) {
         wx.showToast({
-          title: '修改失败！',
+          title: '上传图片失败！',
           icon: 'none'
         })
       },
     })
   },
 
-  upload_img(img) {
-    wx.setStorageSync('img', img)
-    var id = wx.getStorageSync('id')
-    var nickName = wx.getStorageSync('name')
+  upload_img(avatarUrl) {
+    let userInfo = this.data.userInfo
+    let id = userInfo._id
+    let nickName = userInfo.nickName
     db.collection('user').doc(id).update({
       data: {
-        url: img
+        avatarUrl
       },
-    })
-    wx.cloud.callFunction({
-      name: 'forum',
-      data: {
-        name: nickName,
-        url: img
-      },
-      success(res) {},
-      fail(err) {
-        wx.showToast({
-          title: '修改失败',
+      success() {
+        db.collection('trips').where({
+          _openid: userInfo._openid
+        }).update({
+          data: {
+            nickName,
+            avatarUrl
+          },
+          success(res) {
+            userInfo.avatarUrl = avatarUrl
+            wx.setStorageSync('userInfo', userInfo)
+          },
+          fail(err) {
+            wx.showToast({
+              title: '头像修改失败',
+            })
+          },
+          complete() {
+            wx.hideLoading()
+          }
         })
-      },complete(){
-        wx.hideLoading()
       }
     })
+
   },
 
   // 点击查看图片
   preview() {
     var img = []
-    img[0] = this.data.img;
+    img[0] = this.data.avatarUrl;
     wx.previewImage({
       urls: img,
     })
@@ -166,25 +114,18 @@ Page({
   // 退出当前账户
   remove() {
     wx.showModal({
-      cancelColor: 'red',
-      confirmColor: 'black',
       content: '是否退出当前账户，下次登陆依然可以使用本账号。',
       success(res) {
         if (res.confirm) {
           wx.showLoading({
-            title: '退出中...',
+            title: '正在退出...',
           })
-          wx.clearStorageSync()
-          setTimeout(function () {
-            wx.hideLoading({
-              complete: (res) => {
-                wx.navigateBack()
-              },
-            })
-          }, 2000)
-
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+          wx.removeStorageSync('userInfo')
+          wx.setStorageSync('userStatus', 0);
+          wx.setStorageSync('isReloadHome', true);
+          wx.reLaunch({
+            url: '../../home/home',
+          })
         }
       }
     })
@@ -202,11 +143,49 @@ Page({
     })
   },
 
-  school() {
+  toPhone() {
     wx.navigateTo({
-      url: '../person/school/school',
+      url: '../person/phone/phone?id=' + 0,
     })
   },
+
+  toIdentity() {
+    wx.navigateTo({
+      url: '../person/identity/identity',
+    })
+  },
+
+  // 省市区选择器
+  BindRegionChange: function (e) {
+    let that = this //保存this 对象
+    let userInfo = that.data.userInfo
+    let id = userInfo._id
+    let address = {}
+    address.value = e.detail.value //地区名称
+    address.code = e.detail.code //地区编号
+    console.log(address);
+    db.collection('user').doc(id).update({
+      data: {
+        address: _.set(address)
+      },
+      success(res) {
+        that.setData({
+          region: address.value
+        })
+        userInfo.address = address
+        wx.setStorageSync('userInfo', userInfo)
+        wx.setStorageSync('isReloadHome', true)
+      },
+      fail(err) {
+        wx.showToast({
+          title: '网络异常，请稍后重试',
+          icon: 'none'
+        })
+      }
+    })
+
+  },
+
 
   label() {
     wx.navigateTo({

@@ -1,0 +1,40 @@
+/* pages/my/person/identity/identity.wxss */
+page {
+  background-color: white;
+}
+
+.identity-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50rpx;
+}
+
+.main-wraper image {
+  margin-bottom: 20rpx;
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.footer-wraper {
+  width: 100%;
+}
+
+.footer-wraper view{
+  display: flex;
+  align-items: center;
+  margin-bottom: 100rpx;
+}
+
+.footer-wraper view button {
+  flex: 1;
+  margin: 20rpx;
+}

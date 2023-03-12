@@ -1,24 +1,11 @@
 <!-- QQ图片二维码 -->
-<view class="bottom">
-	<view style="display:flex;align-items:center;">
-		<image class="title-img" src="/images/post/14.png"></image>
-		<text class="xuexiao">youbo 校园生活服务</text>
-	</view>
-	<view class="img-box">
-		<image src="{{codeImg}}" bindtap="preview"></image>
-		<view>
-			<text class="save-txet">点击保存，QQ加群。</text>
-		</view>
-	</view>
+<view class="loading" wx:if="{{!qrCode}}">
+  <image src="/images/post/loading.gif" />
 </view>
 
-<!-- 电话框 -->
-<view class="service-box">
-	<view class="phoneBox">
-		<text>客服电话：13237707669</text>
-	</view>
-	<view class="service-phone" bindtap="tel">电话/短信</view>
+<view class="img_wrp bc-theme" wx:else>
+  <image bindtap="preview" mode="widthFix" src="{{qrCode}}"></image>
 </view>
 
 <!-- 在线客服 -->
-<button open-type="contact">客服热线</button>
+<button wx:if="{{qrCode}}" open-type="contact" session-from="weapp">微信客服</button>

@@ -1,0 +1,30 @@
+<!--pages/my/person/identity/identity.wxml-->
+<view class="identity-container">
+  <view class="main-wraper size-36 bold">
+    <block wx:if="{{identity === 1}}">
+      <image src="{{idImg[1]}}" alt="" />
+      <text>你当前的身份为“车主”</text>
+    </block>
+    <block wx:elif="{{identity === 0}}">
+      <image src="{{idImg[2]}}" alt="" />
+      <text>你当前的身份为“乘客”</text>
+    </block>
+    <block wx:else>
+      <image src="{{idImg[0]}}" alt="" />
+      <text>你还没有选择用户身份</text>
+    </block>
+  </view>
+  <view class="footer-wraper">
+  <!-- 1：车主，0：乘客 -->
+    <view wx:if="{{identity === 1}}">
+      <button bindtap="formSubmit" data-id="{{0}}" class="bc-theme color-white">切换为“乘客”身份</button>
+    </view>
+    <view wx:elif="{{identity === 0}}">
+      <button bindtap="formSubmit" data-id="{{1}}" class="bc-theme color-white">切换为“车主”身份</button>
+    </view>
+    <view wx:else>
+      <button bindtap="formSubmit" data-id="{{1}}" class="bc-theme color-white">我是车主</button>
+      <button bindtap="formSubmit" data-id="{{0}}" class="bc-theme color-white">我是乘客</button>
+    </view>
+  </view>
+</view>

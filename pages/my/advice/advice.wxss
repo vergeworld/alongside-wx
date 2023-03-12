@@ -1,0 +1,37 @@
+page {
+  background-color: #f4f5fa;
+}
+
+.opinionBox {
+  padding: 20rpx 0;
+  background-color: white;
+}
+
+/* 文字输入区 */
+textarea {
+  width: 95%;
+  height: 100px;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+/* 图片选择区 */
+@import "/css/upImg";
+
+.school {
+  display: none;
+}
+
+/* 分享按钮 */
+button {
+  width: 40%;
+  color: white;
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+button::after {
+  border: none;
+}

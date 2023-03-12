@@ -1,0 +1,52 @@
+<!-- 轮播图 -->
+<view class="section" wx:if="{{slideShows[0]}}">
+  <view class="slideShow">
+    <import src="/html/util.wxml" />
+    <template is="slideshow" data="{{slideShows}}"></template>
+  </view>
+</view>
+
+<view class="main-wrapper">
+  <import src="/html/post.wxml" />
+  <view style="margin-top:20rpx">
+    <block id="tem" wx:for="{{postList}}" wx:for-index="index" wx:key="id">
+      <template is="post" data="{{item, index, myCanvas}}" />
+    </block>
+  </view>
+</view>
+
+<view class="header">
+  <view class="intent" bindchange="bindRegionChange">
+    <image src="{{appImg}}"></image>
+    <view>
+      <import src="/html/picker_region.wxml" />
+      <template is="fromRegion" data="{{fromRegion}}"></template>
+      <text class="iconfont icon-ArrowRight color-theme size-36"></text>
+      <template is="toRegion" data="{{toRegion}}"></template>
+    </view>
+  </view>
+
+  <view class="type-box" bindtap="toIdentify">
+    <text wx:if="{{identify === -1}}" class="color-gray size-26">全部</text>
+    <text wx:elif="{{identify === 1}}" class="color-gray size-26">车找人</text>
+    <text wx:else class="color-gray size-26">人找车</text>
+    <text class="iconfont icon-Right color-gray size-20 margin-l-10"></text>
+  </view>
+</view>
+
+
+<view class="footer">
+  <!-- 下拉 加载更多 -->
+  <import src="../../html/system.wxml" />
+  <template is="loadeMore" data="{{moreTxt}}" />
+</view>
+
+
+<view class="other">
+  <import src="/html/system.wxml" />
+  <template is="loading" data="{{screen_height,not_net}}" />
+  <view class="isNo" wx:if="{{isNo}}">
+    <image src="{{isNoImg}}"></image>
+    <text class="color-gray">没有找到相关信息</text>
+  </view>
+</view>

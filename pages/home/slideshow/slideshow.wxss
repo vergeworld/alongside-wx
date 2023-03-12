@@ -1,0 +1,42 @@
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}
+
+
+
+.header image{
+  width: 100%;
+}
+
+
+.body{
+  padding: 20rpx;
+}
+
+
+
+rich-text{
+  line-height: 30px;
+  letter-spacing: 2;
+}
+
+
+[alt]{
+	max-width:100%;
+}
+
+div image{
+  width: 100%;
+  margin: 10px 0;
+}

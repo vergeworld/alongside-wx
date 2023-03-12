@@ -1,66 +1,36 @@
 <!-- 用户头像名称 -->
-<view class="container">
+<view class="header">
+  <view class="backBox bc-theme">
+    <view class="circle"></view>
+  </view>
+  <view class="infoBox" bindtap="{{userStatus==0 ? 'toLogin': ''}}">
+    <image class="userImg" wx:if="{{userStatus}}" binderror="error" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <text wx:if="{{!userStatus}}" class="iconfont icon-login_zhanghu i_sign_in size-56 color-white"></text>
 
-	<view class="Not_logged" wx:if="{{not_log}}" bindtap="login">
-			<image class="head_img" src="/images/icon/6.5.png"></image>
-			<text>登录/注册</text>
-	</view>
-
-	<view class="name" wx:else>
-		<view class="txt_img_box" bindtap="person">
-			<view class="txt_img">
-				<image class="userinfo-img" src="{{img}}" mode="aspectFill"></image>
-				<view class="txt_name">
-					<text class="userinfo-nickname" style="font-weight:bold">{{name}}</text>
-					<text style="font-size:28rpx;" wx:if="{{label}}">{{label}}</text>
-					<text style="font-size:28rpx;" wx:else>好的签名让人更容易心动。</text>
-				</view>
-			</view>
-			<image class="addright" style="  margin-right: 20rpx;" src="/images/icon/3.3.png"></image>
-		</view>
-
-	</view>
-
+    <view>
+      <view wx:if="{{userStatus}}" class="i_nackName">
+        <text class="size-56 bold color-white">{{userInfo.nickName}}</text>
+        <text class="size-26 bold color-white" wx:if="{{userInfo.label}}">{{userInfo.label}}</text>
+      </view>
+      <text class="size-56 bold color-white" wx:else>立即登录</text>
+    </view>
+  </view>
 </view>
 
 
-
-<view style="background: white;">
-	<block wx:for="{{titleList}}" wx:key="st">
-		<view class="public-container" bindtap="{{item.tap}}">
-			<view>
-				<image class="publicImg" src="{{item.icon}}"></image>
-				<text class="public">{{item.title}} </text>
-			</view>
-			<image class="addright" src="/images/icon/3.3.png"></image>
-		</view>
-		<view wx:if="{{index==0}}" class="line"></view>
-		<view wx:if="{{index==1}}" class="line"></view>
-	</block>
-</view>
-<view style="height:10px;background:#f3f4f6"></view>
-
-<view style="background: white;">
-	<block wx:for="{{titleList1}}" wx:key="st">
-		<view class="public-container" bindtap="{{item.tap}}">
-			<view>
-				<image class="publicImg" src="{{item.icon}}"></image>
-				<text class="public">{{item.title}} </text>
-			</view>
-			<image class="addright" src="/images/icon/3.3.png"></image>
-		</view>
-		<view wx:if="{{index==0}}" class="line"></view>
-	</block>
-</view>
-
-<view style="height:10px;background:#f3f4f6"></view>
-
-<view style="background: white;">
-	<view class="public-container" bindtap="service">
-		<view>
-			<image class="publicImg" src="/images/icon/4.2.png"></image>
-			<text class="service"> 客服中心 </text>
-		</view>
-		<image class="addright" src="/images/icon/3.3.png"></image>
-	</view>
-</view>
+<block wx:for="{{swp}}" wx:key="{{title}}">
+  <view class="container">
+    <view class="icon-wrapper">
+      <block wx:for="{{item}}" wx:key="st">
+        <view bindtap="{{openId?item.tap:'login'}}" class="icon-box" style="border-right:{{index == 2||index == 5 ? 0 :''}}" bindtap="iconTap" data-url="{{item.url}}">
+          <image class="icon-img" mode="widthFix" src="{{item.img}}">
+          </image>
+          <view class="icon-title-box">
+            <text>{{item.title}} </text>
+            <text class="iconfont icon-Right size-26 color-gray margin-r-20"></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>

@@ -1,113 +1,69 @@
   // 提交评论
   const db = wx.cloud.database();
-  const _ = db.command
+  const _ = db.command;
   var util = require("../utils/util.js");
 
-  function form(e, id, ons, db, set, _this) {
-    var that = this
+  function form(e, id, set, len, commentList, _this) {
     let txt = e.detail.value.comment
-    var comment = {
-      time: util.formatTime(new Date()),
-      url: wx.getStorageSync('img'),
-      name: wx.getStorageSync('name'),
-      imgs: ons,
-      txt: txt
-    }
-    var openId = wx.getStorageSync('openId')
-    if (!openId) {
-      wx.showToast({
-        title: '您还未登录,请先登录~',
-        icon: 'none'
-      })
-      setTimeout(() => {
-        wx.switchTab({
-          url: '../pages/login/login',
-        })
-      }, 1500)
-    } else {
-      if (!txt && !ons[0]) {
-        wx.showToast({
-          title: '你还没有输入内容！',
-          icon: 'none'
-        })
-      } else {
-        const _ = db.command
-        db.collection(set).doc(id).update({
-          data: {
-            comment: _.inc(1),
-            commentList: _.push(comment)
-          },
-          success: res => {
-            that.commentList(set, id, _this)
-            wx.showToast({
-              title: '提交成功',
-            })
-          }
-        })
-        _this.setData({
-          sendMoreMsgFlag: false,
-          value: '',
-          ons: []
-        });
-      }
-    }
-  }
-
-  function commentList(set, id, _this) {
-    db.collection(set).doc(id).get({
-      success(res) {
-        let commentList = res.data.commentList.reverse()
-        _this.setData({
-          commentList,
-        })
-      }
-    })
-  }
-
-    //推荐数量累计
-    function recommend(postList, set, set_tj, id,_this) {
-      let hasChange = postList[0].hasChange
-      let recommend = postList[0].recommend
-      let openId = wx.getStorageSync('openId')
-      if (!openId) {
-        wx.showToast({
-          title: '您还未登录,请先登录~',
-          icon: 'none'
-        })
-        setTimeout(() => {
-          wx.switchTab({
-            url: '../../login/login',
+    if (txt) {
+      wx.cloud.callFunction({
+        name: 'msgcheck',
+        data: {
+          content: txt // 内容检测
+        }
+      }).then(res => {
+        if (res.result.errCode == 87014) {
+          wx.showToast({
+            title: '请注意言行！',
+            icon: 'none'
           })
-        }, 2000)
-      } else {
-        if (hasChange == false) {
-          postList[0].recommend = (recommend + 1)
-          postList[0].hasChange = true
-          const _ = db.command
+        } else {
+          var user = wx.getStorageSync('userInfo');
+          var comment = {
+            txt: txt,
+            url: user.avatarUrl,
+            name: user.nickName,
+            time: new Date().getTime() / 1000,
+          }
           db.collection(set).doc(id).update({
             data: {
-              recommend: _.inc(1)
-            }
-          })
-          db.collection(set_tj).add({
-            data: {
-              postId: id
+              commentList: _.unshift(comment)
             },
-            success() {
-              wx.showToast({
-                title: '推荐成功',
+            success: res => {
+              len++
+              comment.time = util.getDiffTime(comment.time, true);
+              commentList.unshift(comment)
+              _this.setData({
+                len,
+                value: null,
+                commentList,
               })
+            },
+            fail() {
+              wx.showToast({
+                title: '网络异常，请稍后重试!',
+                icon: 'none'
+              })
+            },
+            complete() {
+              wx.hideLoading()
             }
           })
         }
-        _this.setData({
-          postList
-        })
-      }
+      })
+    } else {
+      _this.setData({
+        disabled:false
+      })
+      wx.showToast({
+        icon: 'none',
+        title: '请输入内容',
+      })
     }
+  }
+
+
 
   module.exports = {
-    form,
-    commentList,
-    recommend,
+    form
   }

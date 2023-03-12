@@ -1,0 +1,41 @@
+@import '/css/popup.wxss';
+
+page {
+  background-color: #02a871;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header image{
+ width: 100%;
+}
+
+.commodity_screen{
+  background: none;
+}
+
+.commodity_attr_box {
+  height: 70%;
+}
+
+picker-view-column view {
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+}
+
+
+.container picker-view {
+  width: 100%;
+  height: 76%;
+}
+
+button{
+  margin-top: 20px;
+}

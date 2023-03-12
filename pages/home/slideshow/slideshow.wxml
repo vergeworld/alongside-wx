@@ -1,0 +1,11 @@
+<!--pages/home/slideshow/slideshow.wxml-->
+
+<scroll-view bindscroll="scrollChange" scroll-y="true" style="height: 100%;">
+  <view class="header">
+    <image mode="aspectFill" src="{{ctx.img}}"></image>
+  </view>
+
+  <view class="body">
+    <rich-text nodes="{{ctx.content}}"></rich-text>
+  </view>
+</scroll-view>

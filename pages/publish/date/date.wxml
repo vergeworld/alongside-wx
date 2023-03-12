@@ -1,0 +1,26 @@
+<view class="header">
+  <image mode="widthFix" src="{{banner}}"></image>
+</view>
+
+<!-- 屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box br-top" wx:if="{{showModalStatus}}">
+  <view>
+    <text class="bold size-36">选择出发时间</text>
+  </view>
+  <view class="container">
+    <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view class="{{index === value[0] ? 'color-theme bold size-36' : ''}}" wx:for="{{days}}" wx:key="day">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="{{index === value[1] ? 'color-theme bold size-36' : ''}}" wx:for="{{hours}}" wx:key="hour">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="{{index === value[2] ? 'color-theme bold size-36' : ''}}" wx:for="{{minutes}}" wx:key="minutes">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <button bindtap="backPublish" class="bc-theme color-white bold">确定出发时间</button>
+  </view>
+</view>

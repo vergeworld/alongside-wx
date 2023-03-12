@@ -1,0 +1,89 @@
+.imgs-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4f4;
+}
+
+.tool-box {
+  display: flex;
+}
+
+.publish {
+  width: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 100rpx;
+  background-color: #02f598;
+}
+
+.send-more-box .more-btn-item .btn-txt {
+  color: #888;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+
+.send-more-result-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.send-more-result-main .file-box {
+  position: relative;
+  display: inline-block;
+}
+.imgs-box,
+.send-more-result-main .file-box {
+  width: 196rpx;
+  height: 194rpx;
+  margin-left: 20rpx;
+}
+
+
+.send-more-result-main .file-box.deleting {
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.send-more-result-main image {
+  height: 100%;
+  width: 100%;
+}
+
+.send-more-result-main .remove-icon {
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}
+
+.send-more-result-main .file-box .img-box {
+  height: 100%;
+  width: 100%;
+}
+
+.school {
+  padding: 20rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.school image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 5rpx;
+}

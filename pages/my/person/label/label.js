@@ -1,45 +1,46 @@
 const db = wx.cloud.database();
 var sy = require('../../../../js/system.js')
 Page({
-  data: {
-    label: '',
-  },
+  data: {},
   onLoad: function (options) {
-    sy.system(406, this)
-    var label = wx.getStorageSync('label')
+    var userInfo = wx.getStorageSync('userInfo')
     this.setData({
-      label
+      userInfo,
+      label: userInfo.label,
     })
   },
 
-  input(e) {
-    var label = e.detail.value
-    this.data.label = label
-  },
 
-  save() {
+  formSubmit(e) {
+    let label = e.detail.value.textarea
+    if (!label) {
+      return
+    }
     wx.showLoading({
       title: '正在保存...',
     })
-    var label = this.data.label
-      wx.setStorageSync('label', label)
-      var id = wx.getStorageSync('id')
-      db.collection('user').doc(id).update({
-        data: {
-          label: label
-        },
-        success() {
-          wx.navigateBack()
-        },
-        fail() {
-          wx.showToast({
-            title: '添加失败！',
-            icon: 'none',
-            duration: 2000
-          })
-        },complete(){
-          wx.hideLoading()
-        }
-      })
+    let userInfo = this.data.userInfo
+    let id = userInfo._id
+    db.collection('user').doc(id).update({
+      data: {
+        label
+      },
+      success() {
+        userInfo.label = label
+        wx.setStorageSync('userInfo', userInfo)
+        wx.navigateBack({
+          delta: 1,
+        })
+      },
+      fail() {
+        wx.showToast({
+          title: '网络异常，请稍后重试！',
+          icon: 'none',
+        })
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
   }
 })

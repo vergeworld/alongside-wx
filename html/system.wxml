@@ -1,0 +1,55 @@
+<!-- 顶部隐藏条 -->
+<template name="div">
+  <view class="back" bindtap="back">
+    <image src="/images/icon/5.png"></image>
+  </view>
+
+  <view wx:if="{{isfixed}}" class="div" bindtap="back">
+    <view>
+      <image src="/images/icon/5.png"></image>
+      <text>{{div_title}}</text>
+    </view>
+  </view>
+</template>
+
+<template name="navBar">
+  <view class="back" wx:if="{{!isfixed}}" bindtap="back">
+    <image src="/images/icon/5.png"></image>
+  </view>
+  <view wx:if="{{isfixed}}" class="navBar" style="opacity:{{opacity}}" bindtap="back">
+    <view class="navImg">
+      <image mode="widthFix" src="/images/post/delicacy_tit.png" />
+    </view>
+    <view class="back">
+      <image src="/images/icon/5.1.png"></image>
+    </view>
+  </view>
+</template>
+
+
+<!-- no network -->
+<template name="loading">
+  <view class="loading" style="height:80%" wx:if="{{not_net}}" bindtap="renovate">
+    <image src="/images/isNo.png"></image>
+    <view>网络异常，请点击重试~~</view>
+  </view>
+</template>
+
+<template name="loadeMore">
+  <view class="loadeMore" wx:if="{{moreTxt}}">
+    <image wx:if="{{moreTxt == '正在加载更多...'}}" src="/images/post/loading.gif" />
+    <text>{{moreTxt}}</text>
+  </view>
+</template>
+
+<template name="swiper">
+  <swiper class="swp" indicator-dots="{{dots}}" autoplay interval="5000" circular>
+    <block wx:for="{{swpImg}}" wx:key="*this">
+      <navigator url="{{item.url}}">
+        <swiper-item>
+          <image style="color: gray;" mode="aspectFill" class="swpImg" src="{{item.img}}" />
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</template>

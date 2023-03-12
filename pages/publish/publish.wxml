@@ -1,0 +1,30 @@
+<view class="header">
+  <text space="nbsp">{{headline[currentTab]}}</text>
+  <image mode="heightFix" src="{{publishImg[currentTab].img}}"></image>
+</view>
+
+
+  <view class="publish-body">
+    <!-- 导航栏 -->
+    <view class="navBox">
+      <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:key="idx" wx:key='idx'>
+          <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">
+            <text>{{item}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!-- 内容栏 -->
+    <swiper class="tab-box" current="{{currentTab}}" bindchange="switchTab">
+      <import src="/html/publish.wxml" />
+      <!-- 车主 -->
+      <swiper-item wx:for-item="0" wx:for-index="0" class="tab-content">
+        <template is="driver" data="{{customItem, fromRegion, toRegion, date, content, upImgs, disabled}}"></template>
+      </swiper-item>
+      <!-- 乘客 -->
+      <swiper-item wx:for-item="1" wx:for-index="1" class="tab-content">
+        <template is="passenger" data="{{customItem, fromRegion, toRegion, date, content, disabled}}"></template>
+      </swiper-item>
+    </swiper>
+</view>

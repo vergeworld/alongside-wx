@@ -1,0 +1,182 @@
+page{
+  background: none;
+  padding-bottom: 66px;
+}
+
+/*********header**********/
+.header {
+  flex-direction: column;
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.header .route>text {
+  font-weight: bold;
+}
+
+
+
+.header .route view {
+  display: flex;
+  align-items: center;
+}
+
+.header .route view>text {
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.header .route image {
+  width: 130px;
+  height: 7px;
+  margin: 6rpx 0 10rpx;
+}
+
+
+.author {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.author>view{
+  display: flex;
+  align-items: center;
+}
+
+.author image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  margin-right: 20rpx;
+  background-color: #f3f4f6;
+}
+
+.nickname {
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.type{
+  width: fit-content;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+.phone_wrp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+
+.icon-call{
+  margin-bottom: 5px;
+}
+
+.phone_wrp text:last-child{
+  color: gray;
+  font-size: 12px;
+}
+
+/* 图片布局 */
+/* 图片布局 */
+.img_box {
+  width: 710rpx;
+  margin: 15rpx auto 0;
+  overflow: hidden;
+}
+
+.img_box view {
+  width: 716rpx;
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+.img_box image {
+  width: 235rpx;
+  height: 116px;
+  margin-top: 2px;
+  margin-left: 2px;
+  float: left;
+  background-color: #f3f4f6;
+}
+
+
+.click {
+  width: 15rpx;
+  height: 25rpx;
+  margin-left: 60rpx;
+}
+
+.post-title {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.post-content {
+  color: rgb(22, 22, 22);
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.post-like {
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  align-items: center;
+}
+
+.share-call{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.share-call image{
+  width: 20px;
+  height: 20px;
+}
+
+.share-call button:first-child{
+  width: 15%;
+}
+
+.share-call button:last-child{
+  width: 100%;
+  margin-left: 20rpx;
+}
+
+button{
+  margin: 0;
+}
+
+.post_footer{
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+/*******************评论内容**********************/
+@import "../../../css/comment.wxss";
+
+/*******************输入框**********************/
+@import '../../../css/input_box.wxss';
+
+
+@import '/css/system.wxss';

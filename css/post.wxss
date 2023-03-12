@@ -1,0 +1,301 @@
+/*******帖子内容区********/
+.post-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  background: white;
+  width: 90%;
+  border-radius: 10rpx;
+  margin: 0 auto 20rpx;
+  overflow: hidden;
+}
+
+.post-header {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f4f5fa;
+}
+
+.post-header .h-left {
+  display: flex;
+  align-items: center;
+}
+
+.h-left>text {
+  font-size: 60rpx;
+  margin-right: 20rpx;
+}
+
+.post-header .line {
+  width: 1px;
+  height: 60rpx;
+  background-color: #f4f5fa;
+  margin: 0 20rpx;
+}
+
+
+.post-header>.h-right,
+.post-header .route {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.post-header .route>text {
+  max-width: 140rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.post-header .route view {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30rpx;
+}
+
+.post-header .route view>text {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.post-header .route image {
+  width: 55px;
+  height: 6px;
+  margin-top: 6rpx;
+}
+
+.icon-xingren {
+  transform: rotateY(180deg);
+}
+
+.post-header .h-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header .h-right .reserve {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  font-size: 20rpx;
+  color: white;
+  padding: 6rpx 16rpx;
+
+}
+
+.h-right .prv {
+  animation: change 5s infinite linear alternate;
+  -webkit-animation: change 5s infinite alternate;
+}
+
+.h-right .reserve>text:first-child {
+  margin-right: 10rpx;
+}
+
+.post-header .h-right>text {
+  font-size: 22rpx;
+  margin-bottom: 2px;
+}
+
+@keyframes change {
+  0% {
+    background-color: var(--themeColor);
+  }
+
+  25% {
+    background-color: #089767;
+  }
+
+  50% {
+    background-color: #21a378;
+  }
+
+  75% {
+    background-color: #126449;
+  }
+
+  100% {
+    background-color: #08ad76;
+  }
+}
+
+
+.post-title {
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 20rpx;
+}
+
+.post-content {
+  padding-bottom: 22rpx;
+  letter-spacing: 3rpx;
+  text-align: justify;
+}
+
+.post-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-body>.post-route {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 0;
+}
+
+.post-route>view {
+  color: gray;
+  font-size: 14px;
+  margin: 0 20px;
+}
+
+.post-route image {
+  width: 120%;
+}
+
+
+.post-body>post-location {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.post-footer>.f-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.post-footer .f-head .user {
+  display: flex;
+  align-items: center;
+}
+
+.comt_titImg,
+.post-footer .f-head .user image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  background-color: #f3f4f6;
+}
+
+.post-footer .f-head .user view {
+  height: 70rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.post-footer>.f-head image {
+  width: 50rpx;
+}
+
+.post-footer>.f-head .share {
+  width: 112rpx;
+  text-align: center;
+}
+
+
+/* 图片布局 */
+.img_box {
+  width: 670rpx;
+  border-radius: 6px;
+  margin: 0 auto 12rpx;
+  overflow: hidden;
+}
+
+.img_box view {
+  width: 678rpx;
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+.img_box image {
+  width: 222rpx;
+  height: 110px;
+  margin-top: 2px;
+  margin-left: 2px;
+  float: left;
+  background-color: #f3f4f6;
+}
+
+
+/* 分享按钮 */
+button {
+  width: 100%;
+  height: 60rpx;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border-style: none;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}
+
+/* 评论隐藏/显示 */
+.comment {
+  font-size: 28rpx;
+  line-height: 2;
+  background: #f3f4f6;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.comt_box {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+}
+
+.comt_txtBox {
+  width: 580rpx;
+  display: flex;
+}
+
+
+
+
+.comt_txt {
+  color: gray;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tp {
+  width: 35rpx;
+  height: 35rpx;
+  margin: 0px 5rpx -4rpx 5px;
+}
+
+.all_comt {
+  color: gray;
+  margin-top: 15rpx;
+  margin-left: 98rpx;
+}

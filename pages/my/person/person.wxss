@@ -17,6 +17,11 @@ page {
   border-bottom: 1px solid #f5f4f4;
 }
 
+.publish view{
+  display: flex;
+  align-items: center;
+}
+
 .tx {
   padding: 10rpx 20rpx 10rpx 0;
   justify-content: space-between;
@@ -28,10 +33,10 @@ page {
 }
 
 .tx-img {
-  width: 100rpx;
-  height: 100rpx;
+  width: 90rpx;
+  height: 90rpx;
   border-radius: 50%;
-  margin-right: 20rpx;
+  background-color: #f3f4f6;
 }
 
 .label {
@@ -48,16 +53,31 @@ page {
 }
 
 .icon {
-  width: 20rpx;
-  height: 30rpx;
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 20rpx;
 }
 
 button{
-  color: white;
-  background-color: red;
-  font-weight: bold;
+  width: 95%;
+  color: red;
+  font-size: 32rpx;
+  line-height: 50px;
   position: absolute;
   bottom: 20px;
-  left: 20rpx;
-  right: 20rpx;
+  right: 0;
+  left: 0;
+  background-color: white;
+}
+
+button::after{
+  border: none;
+}
+
+.Canvas {
+  position: absolute;
+  left: -100000px;
+  bottom: -111111px;
+  height: 1000px;
+  width: 1000px;
 }

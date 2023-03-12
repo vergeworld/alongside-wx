@@ -1,0 +1,83 @@
+<template name="post">
+  <view class="post-container" data-id="{{item._id}}" data-index="{{index}}" data-userid="{{item._openid}}" data-canvasId="{{myCanvas}}" bindtap="toDetail">
+    <!-- 内容头部 -->
+    <view class="post-header" bindtap="my" data-id="{{item._openid}}">
+      <view class="h-left">
+        <text class="iconfont {{item.type ? 'icon-xingren':'icon-toyCar-fill'}} color-theme size-46"></text>
+        <!-- 行程 -->
+        <view class="route">
+          <text wx:if="{{item.fromValue[3]}}">{{item.fromValue[3]}}</text>
+          <text wx:else>{{item.fromValue[2]}}</text>
+          <view>
+            <text class="color-gray">{{item.date}}</text>
+            <image mode="widthFix" src="/images/intent.png" />
+          </view>
+          <text wx:if="{{item.toValue[3]}}">{{item.toValue[3]}}</text>
+          <text wx:else>{{item.toValue[2]}}</text>
+        </view>
+
+      </view>
+      <view class="h-right">
+        <text class="{{item.privilege == 1 ? 'color-gold': ''}}">{{item.type ? '联系乘客': '联系车主'}}</text>
+        <view class="reserve {{item.privilege == 1 ? 'prv': ''}} bc-theme" data-phone="{{phone.water}}" bindtap="tel">
+          <text>电话</text>
+          <text class="iconfont icon-arrow-right color-white size-16"></text>
+        </view>
+      </view>
+
+    </view>
+
+    <!-- 内容主体 -->
+    <view class="post-body">
+      <view class="post-content" wx:if="{{item.imgs[0]}}">
+        <text selectable>{{item.content}}</text>
+      </view>
+
+      <!-- 图片展示 -->
+      <view class="img_box" wx:if="{{item.imgs[0]}}">
+        <view>
+          <block wx:for="{{item.imgs}}" wx:for-index="idx" wx:for-item="img" wx:key="*this">
+            <image id="{{index}}" data-list="{{img}}" data-src="{{img}}" bindtap="preview" mode="aspectFill" style="width: {{idx == 1 ? item.mgW :  '' }}rpx;height:{{idx == 1 ? item.mgH : ''}}px;width: {{idx == 0 ? item.imgW : '' }}rpx;height:{{idx == 0 ? item.imgH : ''}}px;" src="{{img}}" />
+          </block>
+        </view>
+      </view>
+
+
+    </view>
+
+    <!-- 内容底部 -->
+    <view class="post-footer">
+
+      <!-- 互动记录 -->
+      <view class="f-head">
+        <view class="user" catchtap="toPersion" data-id="{{item._openid}}">
+          <image mode="aspectFill" src="{{item.avatarUrl}}" />
+          <text class="size-26 color-gray">{{item.nickName}}</text>
+        </view>
+        <van-overlay>
+
+          <view class="share" catchtap="catchShare">
+            <!-- 分享 -->
+            <button open-type="share" data-id="{{item._id}}" data-index="{{index}}">
+              <text class="iconfont icon-ic_share size-36 color-gray"></text>
+            </button>
+          </view>
+        </van-overlay>
+      </view>
+
+
+      <!-- 评论列表 -->
+      <view class="comment" wx:if="{{item.commentList[0]}}">
+        <block wx:for="{{item.commentList}}" wx:key='time' wx:if="{{index<6}}">
+          <view class="comt_box" bindtap="homepage" data-userid="{{item.openId}}">
+            <text class="size-26 color-theme bold">{{item.name}}：</text>
+            <text class="size-26 comt_txt">{{item.txt}}</text>
+          </view>
+          <view class="color-gray lh-40" wx:if="{{index == 5}}">查看全部评论</view>
+        </block>
+
+      </view>
+    </view>
+
+  </view>
+</template>

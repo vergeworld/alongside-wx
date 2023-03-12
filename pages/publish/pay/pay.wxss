@@ -1,0 +1,50 @@
+/* pages/public/pay/pay.wxss */
+@import '/css/popup.wxss';
+
+page {
+  background-color: #bb8a35;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header image {
+  width: 100%;
+}
+
+.commodity_screen {
+  background: none;
+}
+
+.commodity_attr_box {
+  height: 405px;
+}
+
+.radio-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #bb8a35;
+  padding: 0 20rpx;
+  line-height: 60px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-cell:first-of-child{
+  margin-top: 20px;
+}
+
+.checked{
+  line-height: 54px;
+  border: 4px solid #bb8a35;
+  font-weight: bold;
+}
+
+button {
+  line-height: 60px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}

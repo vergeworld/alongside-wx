@@ -1,0 +1,71 @@
+page {
+  background-color: #02a871
+}
+
+/*******顶部隐藏条********/
+@import '/css/system.wxss';
+
+.div {
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #02f598;
+}
+
+.blank-box {
+  top: 225px;
+  height: 66%;
+  background: #f4f5fa;
+}
+
+.blank-box image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx
+}
+
+/* 个人背景框 */
+.userBox {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.name {
+  width: 200px;
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.urlBox {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: white;
+  overflow: hidden;
+}
+
+.urlBox image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 动态 */
+@import '../css/post.wxss';
+
+.more {
+  display: block;
+}
+
+.loadeMore {
+  color: white;
+}

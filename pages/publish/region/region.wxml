@@ -1,0 +1,4 @@
+<import src="/html/picker_region" />
+<view>
+  <template is="fromRegion" data="{{fromValue}}"></template>
+</view>

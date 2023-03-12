@@ -1,0 +1,19 @@
+<template name="fromRegion">
+  <picker mode="region" level="sub-district" bindchange="fromBindRegionChange" value="{{fromRegion.value}}">
+    <view>
+      <text wx:if="{{fromRegion.value[3] && fromRegion.value[3] != '全部'}}">{{fromRegion.value[3]}}</text>
+      <text wx:elif="{{fromRegion.value[2] && fromRegion.value[2] !='全部'}}">{{fromRegion.value[2]}}</text>
+      <text wx:else class="color-gray">你在哪里</text>
+    </view>
+  </picker>
+</template>
+
+<template name="toRegion">
+  <picker mode="region" level="sub-district" bindchange="toBindRegionChange" value="{{toRegion.value}}">
+    <view>
+      <text wx:if="{{toRegion.value[3] && toRegion.value[3] != '全部'}}">{{toRegion.value[3]}}</text>
+      <text wx:elif="{{toRegion.value[2] && toRegion.value[2] !='全部'}}">{{toRegion.value[2]}}</text>
+      <text wx:else class="color-gray">你去哪里</text>
+    </view>
+  </picker>
+</template>

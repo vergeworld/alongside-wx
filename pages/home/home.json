@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "首页",
+  "backgroundColorTop": "#fff",
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50 
+}

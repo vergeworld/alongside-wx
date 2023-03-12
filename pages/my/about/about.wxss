@@ -1,0 +1,15 @@
+page{
+  padding-bottom: 30rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+rich-text{
+  line-height: 30px;
+}
+
+[alt]{
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
